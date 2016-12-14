@@ -1,0 +1,43 @@
+/// @example scss - 5vw font size (with 50px fallback), 
+///                 minumum of 35px and maximum of 150px
+///  @include responsive-font(5vw, 35px, 150px, 50px);
+///
+@mixin responsive-font($responsive, $min, $max: false, $fallback: false) {
+  $responsive-unitless: $responsive / ($responsive - $responsive + 1);
+  $dimension: if(unit($responsive) == 'vh', 'height', 'width');
+  $min-breakpoint: $min / $responsive-unitless * 100;
+  
+  @media (max-#{$dimension}: #{$min-breakpoint}) {
+    font-size: $min;
+  }
+  
+  @if $max {
+    $max-breakpoint: $max / $responsive-unitless * 100;
+    
+    @media (min-#{$dimension}: #{$max-breakpoint}) {
+      font-size: $max;
+    }
+  }
+  
+  @if $fallback {
+    font-size: $fallback;
+  }
+  
+  font-size: $responsive;
+}
+
+
+@mixin subheadline-font($size)
+{
+  font-size: $size;
+  font-family: $subheadline-font;
+  font-style: normal;
+}
+
+$tradeGothicBold: 'Trade-Gothic-bd20';
+$bebasNeue: 'Bebas-Neue';
+$bebasNeueBold: 'Bebas-Neue-Bold';
+$sofiaPro: 'Sofia-Pro';
+$sofiaProBold: 'Sofia-Pro-Bold';
+
+$brandColorRed: #e51937;
