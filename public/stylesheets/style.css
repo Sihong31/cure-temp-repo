@@ -37,14 +37,18 @@
       bottom: 0;
       left: 50%;
       width: 100%;
-      min-width: 866px;
-      max-width: 914px;
+      min-width: 671px;
+      max-width: 671px;
       transform: translate(-50%, 0); }
       @media screen and (max-width: 767px) {
         .carousel .carousel-inner .upper-slide-container img {
           width: 100%;
           min-width: 305px;
           max-width: 305px; } }
+      @media (min-width: 1200px) {
+        .carousel .carousel-inner .upper-slide-container img {
+          min-width: 767px;
+          max-width: 914px; } }
     .carousel .carousel-inner .upper-slide-container h1, .carousel .carousel-inner .upper-slide-container h4, .carousel .carousel-inner .upper-slide-container p {
       position: absolute; }
     .carousel .carousel-inner .upper-slide-container h1, .carousel .carousel-inner .upper-slide-container h4 {
@@ -54,7 +58,7 @@
       color: #e51937;
       /*font-size: 10vw;*/
       font-size: 10vw;
-      opacity: .86;
+      opacity: .9;
       text-align: center;
       width: 100%;
       top: 58%;
@@ -94,7 +98,7 @@
         .carousel .carousel-inner .upper-slide-container h4.header-left {
           padding: 0 30px;
           left: 0;
-          top: 10%;
+          top: 8%;
           transform: translate(0, 0);
           text-align: center;
           width: 100%; } }
@@ -112,7 +116,7 @@
         .carousel .carousel-inner .upper-slide-container h4.header-right {
           padding: 0 30px;
           right: 0;
-          top: 19%;
+          top: 16%;
           transform: translate(0, 0);
           text-align: center;
           width: 100%; } }
@@ -138,6 +142,18 @@
       @media (min-width: 2307.69231px) {
         .carousel .carousel-inner .upper-slide-container p {
           font-size: 30px; } }
+    .carousel .carousel-inner .upper-slide-container .upper-carousel-btn {
+      top: 75%;
+      left: 50%;
+      transform: translate(-50%, -75%);
+      position: absolute; }
+      @media screen and (max-width: 767px) {
+        .carousel .carousel-inner .upper-slide-container .upper-carousel-btn {
+          width: 85%;
+          max-width: 260px;
+          top: 94%;
+          left: 50%;
+          transform: translate(-50%, -94%); } }
   .carousel .carousel-inner .lower-slide-left {
     padding-left: 0;
     padding-right: 0; }
@@ -187,6 +203,25 @@
       @media screen and (max-width: 767px) {
         .carousel .carousel-control .carousel-prev, .carousel .carousel-control .carousel-next {
           top: 15%; } }
+
+.cure-btn {
+  border: 2px solid #e51937;
+  border-radius: 0;
+  color: #ffffff;
+  font-family: "Trade-Gothic-bd20";
+  opacity: .9;
+  padding: 5px;
+  text-transform: uppercase; }
+  .cure-btn .btn-text-container {
+    background: #e51937;
+    opacity: .9;
+    padding: 15px 20px; }
+
+.cure-btn:hover {
+  color: #ffffff; }
+
+.cure-btn:visited {
+  color: #ffffff; }
 
 .container {
   /*max-width: 1440px;*/

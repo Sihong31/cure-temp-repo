@@ -1,0 +1,22 @@
+.cure-btn {
+	border: 2px solid #e51937;
+	border-radius: 0;
+	color: #ffffff;
+	font-family: $tradeGothicBold;
+	opacity: .9;
+	padding: 5px;
+	text-transform: uppercase;
+	.btn-text-container	{
+		background: #e51937;
+		opacity: .9;
+		padding: 15px 20px;
+	}
+}
+
+.cure-btn:hover {
+	color: #ffffff;
+}
+
+.cure-btn:visited {
+	color: #ffffff;
+}

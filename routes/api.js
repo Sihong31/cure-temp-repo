@@ -1,9 +1,9 @@
 const express = require('express');
 const router = express.Router();
-const data = require('../data/data');
+const data = require('../data/data.json');
 
-router.get('/test', (req, res) => {
-	res.send({ contests: data.contests });
+router.get('/api', (req, res) => {
+	res.json(data);
 });
 
 module.exports = router;

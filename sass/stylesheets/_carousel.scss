@@ -20,13 +20,17 @@
 			    bottom: 0;
 			    left: 50%;
 			    width: 100%;
-			    min-width: 866px;
-			    max-width: 914px;
+			    min-width: 671px;
+			    max-width: 671px;
 			    transform: translate(-50%, 0);
 			    @media screen and (max-width: 767px) {
 			    	width: 100%;
 			    	min-width: 305px;
 					max-width: 305px;
+				}
+				@media (min-width: 1200px) {
+					min-width: 767px;
+				    max-width: 914px;
 				}
     		}
     		h1, h4, p {
@@ -40,7 +44,7 @@
     			color: $brandColorRed;
     			/*font-size: 10vw;*/
     			@include responsive-font(10vw, 100px, 200px);
-    			opacity: .86;
+    			opacity: .9;
     			text-align: center;
     			width: 100%;
     			top: 58%;
@@ -70,7 +74,7 @@
 			    @media screen and (max-width: 767px) {
 			    		padding: 0 30px;
 					    left: 0;
-    				    top: 10%;
+    				    top: 8%;
 					    transform: translate(0, 0);
 					    text-align: center;
 					    width: 100%;
@@ -89,7 +93,7 @@
 			    @media screen and (max-width: 767px) {
 					    padding: 0 30px;
 					    right: 0;
-			    	    top: 19%;
+			    	    top: 16%;
 					    transform: translate(0, 0);
 					    text-align: center;
 					    width: 100%;    				
@@ -111,6 +115,19 @@
 			    top: 100%;
 			    left: 50%;
 			    transform: translate(-50%, -100%);
+    		}
+    		.upper-carousel-btn {
+			    top: 75%;
+			    left: 50%;
+			    transform: translate(-50%, -75%);
+			    position: absolute;
+			    @media screen and (max-width: 767px) {
+			    	width: 85%;
+    				max-width: 260px;
+				   	top: 94%;
+				    left: 50%;
+				    transform: translate(-50%, -94%);
+			    }
     		}
 		}
 		.lower-slide-left {

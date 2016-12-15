@@ -1,24 +1,34 @@
 {
-	"contests": [
+	"slides": [
 		{
 			"id": 1,
-			"categoryName": "Business/Company",
-			"contestName": "Cognitive Building Bricks"
+			"headerLeft": "<span>One in 26 people</span> will develop epilepsy in their lifetime.",
+			"headerRight": "That's <span>65 Million</span> people who desperately <span>need a cure.</span>",
+			"upperImg": "slide-1.png",
+			"upperMainHeader": "Lauren needs a cure <p class='hidden-xs'>Her first seizure was at seven months. Now 35, Lauren hasn't lived a single day independently.</p>",
+			"btnText": "view lauren's story",
+			"lowerImgD": "sub-slide-1.png",
+			"lowerImgM": "mobile-sub-slide-1.png"
 		},
 		{
 			"id": 2,
-			"categoryName" : "Magazine/Newsletter",
-			"contestName": "Education people about sustainable food production"
+			"headerLeft": "<span>One in 26 people</span> will develop epilepsy in their lifetime.",
+			"headerRight": "That's <span>65 Million</span> people who desperately <span>need a cure.</span>",
+			"upperImg": "slide-1.png",
+			"upperMainHeader": "Lauren needs a cure <p class='hidden-xs'>Her first seizure was at seven months. Now 35, Lauren hasn't lived a single day independently.</p>",
+			"btnText": "view lauren's story",
+			"lowerImgD": "sub-slide-1.png",
+			"lowerImgM": "mobile-sub-slide-1.png"
 		},
 		{
 			"id": 3,
-			"categoryName": "Software Component",
-			"contestName": "Big Data Analytics for cash ciruclation"
-		},
-		{
-			"id": 4,
-			"categoryName": "Website",
-			"contestName": "Free programming books"
+			"headerLeft": "<span>One in 26 people</span> will develop epilepsy in their lifetime.",
+			"headerRight": "That's <span>65 Million</span> people who desperately <span>need a cure.</span>",
+			"upperImg": "slide-1.png",
+			"upperMainHeader": "Lauren needs a cure <p class='hidden-xs'>Her first seizure was at seven months. Now 35, Lauren hasn't lived a single day independently.</p>",
+			"btnText": "view lauren's story",
+			"lowerImgD": "sub-slide-1.png",
+			"lowerImgM": "mobile-sub-slide-1.png"
 		}
 	]
 }
