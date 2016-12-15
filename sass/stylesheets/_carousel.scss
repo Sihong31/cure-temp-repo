@@ -26,7 +26,7 @@
 			    @media screen and (max-width: 767px) {
 			    	width: 100%;
 			    	min-width: 305px;
-					max-width: 305px;
+					max-width: 335px;
 				}
 				@media (min-width: 1200px) {
 					min-width: 767px;
@@ -130,52 +130,135 @@
 			    }
     		}
 		}
-		.lower-slide-left {
-			padding-left: 0;
-			padding-right: 0;
-		}
 		.lower-slide-container {
 			height: 100vh;
-			/*max-height: 900px;*/
+			/*min-height: 900px;*/
+			max-height: 900px;	
 			position: relative;
 			@media screen and (max-width: 767px) {
-				min-height: 550px;
-				max-height: 550px;
+				min-height: 522px;
+				max-height: 522px;
+			}
+			.lower-slide-left,
+			.lower-slide-right {
+				padding-left: 0;
+				padding-right: 0;
+			}
+			.lower-slide-left {
+				max-width: 900px;
+			}
+			.lower-slide-right {
+				padding-left: 75px;
+				position: relative;
+			    top: 50%;
+			    left: 0;
+			    transform: translate(0, -50%);
+			    @media screen and (min-width: 768px) and (max-width: 1080px) {
+			    	padding-left: 0;
+			    	position: absolute;
+				    left: 50%;
+				    transform: translate(-50%, -50%);
+			    }
+				.story-mini-headline {
+					font-family: $bebasNeueBold;
+					@include responsive-font(1.2vw, 14px, 30px);
+					margin: 0;
+					text-transform: uppercase;
+					span {
+						&:after {
+							color: #000000;
+							content: '|';
+							padding-left: 8px;
+    						padding-right: 8px;
+						}
+					}
+				}
+				.story-main-headline {
+					font-family: $bebasNeueBold;
+					@include responsive-font(6vw, 40px, 160px);
+					margin: 0;
+					text-transform: uppercase;
+				}
+				.story-body-copy {
+					font-family: $sofiaPro;
+					@include responsive-font(1.2vw, 14px, 30px);
+					width: 70%;
+					@media screen and (min-width: 768px) and (max-width: 1080px) {
+						width: 100%;
+					}
+				}
+				hr {
+					border-top: 3px solid $brandColorRed;
+					margin: 5px 0 25px 0;
+					text-align: left;
+					width: 100px;
+				}
+				.lower-carousel-btn {
+					font-size: 16px;
+					margin-right: 15px;
+					@media screen and (min-width: 768px) and (max-width: 1080px) {
+						margin-top: 15px;
+					}
+					.btn-text-container {
+						padding: 10px 35px;
+					}
+				}
 			}
 			img {
 /*				position: absolute;
 				bottom: 0;
 				left: 0;*/
+				min-width: 840px;
+				max-width: 840px;
 				width: 100%;
+				@media screen and (min-width: 768px) and (max-width: 1080px) {
+					position: absolute;
+					opacity: .3;
+				}
 				@media screen and (max-width: 767px) {
-					margin: 0 auto;
-					max-width: 505px;
-					padding-top: 23.6%;
+					min-width: 335px; 
+					max-width: 335px;
+					position: absolute;
+					left: 50%;
+   					transform: translateX(-50%);
 					width: 100%;
 				}
 
 			}
 		}
 	}
+	.carousel-control.left {
+		left: 2%;
+		@media screen and (max-width: 767px) {
+			left: 5%;
+		}
+	}
+	.carousel-control.right {
+		right: 4%;
+		@media screen and (max-width: 767px) {
+			right: 10%;
+		}
+	}
 	.carousel-control {
 		background-image: none;
 		opacity: 1;
+		width: 0;
 		&:hover {
 			opacity: 1;
 		}
 		.carousel-prev {
 			background: url(../images/carousel/prev.png) no-repeat 0 0;
-			left: 10%;
+/*			left: 10%;
 			@media screen and (max-width: 767px) {
 				left: 25%;
-			}
+			}*/
 		}
 		.carousel-next {
 			background: url(../images/carousel/next.png) no-repeat 0 0;
-			right: 10%;
+/*			right: 10%;
 			@media screen and (max-width: 767px) {
 				right: 15%;
-			}
+			}*/
 		}
 		.carousel-prev, .carousel-next {
 			display: inline-block;
@@ -185,7 +268,7 @@
 			top: 25%;
 			z-index: 5;
 			@media screen and (max-width: 767px) {
-				top: 15%;
+			    top: 12%;
 			}
 		}
 	}

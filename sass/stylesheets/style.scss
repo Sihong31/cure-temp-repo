@@ -4,8 +4,29 @@
 @import 'button';
 
 .container {
-	/*max-width: 1440px;*/
+	/*max-width: 1980px;*/
 	padding-left: 0;
 	padding-right: 0;
     width: 100%;
+}
+
+.brand-color-1 {
+	color: $brandColorRed;
+}
+
+.brand-text {
+	color: #000000;
+	font-family: $tradeGothic;
+    font-size: 11px;
+    font-weight: bold;
+    padding: 2px 10px;
+    position: absolute;
+    top: 10px;
+    left: 100px;
+    text-transform: uppercase;
+    z-index: 3;
+    @media screen and (max-width: 767px) {
+    	left: 75px;
+		font-size: 8px;
+	}
 }

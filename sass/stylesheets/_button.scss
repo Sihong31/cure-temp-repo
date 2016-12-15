@@ -1,8 +1,27 @@
+.cure-logo {
+	background: #e51937;
+	color: #ffffff;
+	font-family: $tradeGothic;
+	font-size: 24px;
+	padding: 2px 10px;
+	position: fixed;
+	top: 10px;
+	left: 20px;
+	text-align: center;
+	text-transform: uppercase;
+	z-index: 3;
+	@media screen and (max-width: 767px) {
+		font-size: 14px;
+	}
+}
+
 .cure-btn {
 	border: 2px solid #e51937;
 	border-radius: 0;
 	color: #ffffff;
+	cursor: pointer;
 	font-family: $tradeGothicBold;
+	letter-spacing: 1px;
 	opacity: .9;
 	padding: 5px;
 	text-transform: uppercase;
@@ -19,4 +38,18 @@
 
 .cure-btn:visited {
 	color: #ffffff;
+}
+
+.donate-btn {
+	position: absolute;
+    bottom: 10px;
+    right: 15px;
+    letter-spacing: 4px;
+}
+
+.donate-btn-first-section {
+	bottom: 51%;
+	@media screen and (min-width: 1980px) {
+
+	}
 }
