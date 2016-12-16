@@ -2,6 +2,8 @@ const React = require('react');
 const es6Promise = require('es6-promise').polyfill(); //IE10, IE11
 const slideData = require('../../data/data.json')
 
+import Button from './button';
+
 class Carousel extends React.Component {
 	constructor(props) {
 		super(props);
@@ -90,16 +92,8 @@ class Carousel extends React.Component {
 						  </div>
 					    </div>
   	      	  	      )}
-			    	<a href="#" className="hidden-xs btn cure-btn donate-btn donate-btn-first-section" role="button">
-			    		<div className="btn-text-container">
-			    			donate
-			    		</div>
-			    	</a>
-			    	<a href="#" className="hidden-xs btn cure-btn donate-btn" role="button">
-			    		<div className="btn-text-container">
-			    			donate
-			    		</div>
-			    	</a>
+					  <Button bodyText="donate" id="donate-btn-first-section" />
+					  <Button bodyText="donate" />
 				  </div>
 
 				  <a className="left carousel-control" href="#carousel"
