@@ -41,14 +41,14 @@
       bottom: 0;
       left: 50%;
       width: 100%;
-      min-width: 671px;
-      max-width: 671px;
+      min-width: 914px;
+      max-width: 914px;
       transform: translate(-50%, 0); }
       @media screen and (max-width: 767px) {
         .carousel .carousel-inner .upper-slide-container img {
           width: 100%;
           min-width: 305px;
-          max-width: 335px; } }
+          max-width: 305px; } }
       @media (min-width: 1200px) {
         .carousel .carousel-inner .upper-slide-container img {
           min-width: 767px;
@@ -176,7 +176,7 @@
   .carousel .carousel-inner .lower-slide-container {
     height: 100vh;
     /*min-height: 900px;*/
-    max-height: 900px;
+    max-height: 1220px;
     position: relative; }
     @media screen and (max-width: 767px) {
       .carousel .carousel-inner .lower-slide-container {
@@ -193,6 +193,7 @@
       position: relative;
       top: 50%;
       left: 0;
+      opacity: 0;
       transform: translate(0, -50%); }
       @media screen and (min-width: 768px) and (max-width: 1080px) {
         .carousel .carousel-inner .lower-slide-container .lower-slide-right {
@@ -353,7 +354,7 @@
       height: 25px;
       width: 25px;
       position: absolute;
-      top: 25%;
+      top: 26%;
       z-index: 5; }
       @media screen and (min-width: 768px) and (max-width: 1080px) {
         .carousel .carousel-control .carousel-prev, .carousel .carousel-control .carousel-next {
@@ -361,6 +362,8 @@
       @media screen and (max-width: 767px) {
         .carousel .carousel-control .carousel-prev, .carousel .carousel-control .carousel-next {
           top: 12%; } }
+  .carousel .carousel-indicators {
+    display: none; }
 
 .cure-logo {
   background: #e51937;
@@ -410,6 +413,9 @@
 
 #donate-btn-first-section {
   bottom: 51%; }
+
+html {
+  overflow-y: scroll; }
 
 .container {
   /*max-width: 1980px;*/

@@ -3,6 +3,10 @@
 @import 'carousel';
 @import 'button';
 
+html {
+    overflow-y: scroll;
+}
+
 .container {
 	/*max-width: 1980px;*/
 	padding-left: 0;

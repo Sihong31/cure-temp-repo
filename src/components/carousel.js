@@ -53,7 +53,7 @@ class Carousel extends React.Component {
 					      	<div className="col-xs-12">
 					      	  <div className="upper-slide-container">
 					      	  	<h4 className="header-left" dangerouslySetInnerHTML={{__html: slide.headerLeft}}></h4>
-						    	<img className="img-responsive" src={`/images/carousel/${slide.upperImg}`} alt={slide.id}/>
+						    	<img className="img-responsive main-image" src={`/images/carousel/${slide.upperImg}`} alt={slide.id}/>
 						    	<h4 className="header-right" dangerouslySetInnerHTML={{__html: slide.headerRight}}></h4>
 						    	<h1 dangerouslySetInnerHTML={{__html: slide.upperMainHeader}}></h1>
 						    	<a href="#" className="btn cure-btn upper-carousel-btn" role="button">
@@ -68,8 +68,8 @@ class Carousel extends React.Component {
 					      <div className="row">
 					      	<div className="lower-slide-container">
 						      	<div className="col-xs-12 col-sm-6 lower-slide-left">
-							    	<img className="img-responsive hidden-xs" src={`/images/carousel/${slide.lowerImgD}`} alt={slide.id}/>
-							    	<img className="img-responsive hidden-sm hidden-md hidden-lg" src={`/images/carousel/${slide.lowerImgM}`} alt={slide.id}/>
+							    	{/*<img className="img-responsive hidden-xs" src={`/images/carousel/${slide.lowerImgD}`} alt={slide.id}/>
+							    	<img className="img-responsive hidden-sm hidden-md hidden-lg" src={`/images/carousel/${slide.lowerImgM}`} alt={slide.id}/>*/}
 						      	</div>
 
 						    	<div className="col-xs-12 col-sm-6 lower-slide-right">
@@ -92,8 +92,8 @@ class Carousel extends React.Component {
 						  </div>
 					    </div>
   	      	  	      )}
-					  <Button bodyText="donate" id="donate-btn-first-section" />
-					  <Button bodyText="donate" />
+					  <Button link="#" bodyText="donate" extraClass="donate-btn" id="donate-btn-first-section" />
+					  <Button link="#" bodyText="donate" extraClass="donate-btn" />
 				  </div>
 
 				  <a className="left carousel-control" href="#carousel"
