@@ -27,12 +27,28 @@
 }
 
 
-@mixin subheadline-font($size)
-{
-  font-size: $size;
-  font-family: $subheadline-font;
-  font-style: normal;
+@mixin subheadline() {
+  font-family: $bebasNeueBold;
+  margin: 0;
+  text-transform: uppercase;
 }
+
+@mixin body-copy() {
+  font-family: $sofiaPro;
+}
+
+@mixin horizontal-rule() {
+  border-top: 3px solid $brandColorRed;
+  margin: 5px 0 25px 0;
+  text-align: left;
+  width: 100px;
+  @media screen and (max-width: 767px) {
+    border-top: 2px solid $brandColorRed;
+    margin: 15px auto 25px auto;
+  }
+}
+
+
 
 $tradeGothicBold: 'Trade-Gothic-bd20';
 $tradeGothic: 'Trade-Gothic';

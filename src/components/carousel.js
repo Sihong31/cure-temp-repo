@@ -50,6 +50,9 @@ class Carousel extends React.Component {
 	      	  		  {this.state.slides.map(slide =>
 					    <div className={`item cure-carousel-item ${this.activeFirstItem(slide.id)}`} key={slide.id}>
 					      <div className="row">
+					      	{/*<div className="hidden-xs col-sm-1 side-container">
+					      		<img className="img-responsive carousel-shoulder left" src="images/carousel/s1-shoulder-left.png" alt=""/>
+					      	</div>*/}
 					      	<div className="col-xs-12">
 					      	  <div className="upper-slide-container">
 					      	  	<h4 className="header-left" dangerouslySetInnerHTML={{__html: slide.headerLeft}}></h4>
@@ -63,6 +66,9 @@ class Carousel extends React.Component {
 						    	</a>	
 						      </div>
 					      	</div>
+					      	{/*<div className="hidden-xs col-sm-1 side-container">
+					      		<img className="img-responsive carousel-shoulder right" src="images/carousel/s1-shoulder-right.png" alt=""/>
+					      	</div>*/}
 						  </div>
 
 					      <div className="row">
@@ -71,23 +77,24 @@ class Carousel extends React.Component {
 							    	{/*<img className="img-responsive hidden-xs" src={`/images/carousel/${slide.lowerImgD}`} alt={slide.id}/>
 							    	<img className="img-responsive hidden-sm hidden-md hidden-lg" src={`/images/carousel/${slide.lowerImgM}`} alt={slide.id}/>*/}
 						      	</div>
-
-						    	<div className="col-xs-12 col-sm-6 lower-slide-right">
-					    			<p className="story-mini-headline"><span className="brand-color-1">Lauren</span><span>Age 8</span>Enjoys lorem IPSUM DOLORE SU ANUM</p>
-					    			<h1 className="story-main-headline">Epilepsy is <span className="brand-color-1">suffering</span></h1>
-					    			<hr></hr>
-					    			<p className="story-body-copy">Like many people suffering from epilepsy, the disorder wreaked havoc on Lauren’s developing brain as a child. As her seizures continued, their origin remained a mystery - a reality that two-thirds of those diagnosed with epilepsy share. After countless hospitalizations, medical procedures, and a lifetime of assisted living, Lauren still doesn’t have an answer. Lauren will never live a normal life, but she is not done fighting. For Lauren and so many others, finding a cure for epilepsy means complete freedom from seizures and the opportunity for a future filled with possibility. </p>
-						    		<a href="#" className="btn cure-btn lower-carousel-btn" role="button">
-							    		<div className="btn-text-container">
-							    			More about epilepsy
-							    		</div>
-							    	</a>
-							    	<a href="#" className="btn cure-btn lower-carousel-btn" role="button">
-							    		<div className="btn-text-container">
-							    			More about lauren
-							    		</div>
-							    	</a>
-							    </div>
+						      	<div className="right-content-container">
+							    	<div className="col-xs-12 col-sm-6 lower-slide-right">
+						    			<p className="story-mini-headline"><span className="brand-color-1">Lauren</span><span>Age 8</span>Enjoys lorem IPSUM DOLORE SU ANUM</p>
+						    			<h1 className="story-main-headline">Epilepsy is <span className="brand-color-1">suffering</span></h1>
+						    			<hr></hr>
+						    			<p className="story-body-copy">Like many people suffering from epilepsy, the disorder wreaked havoc on Lauren’s developing brain as a child. As her seizures continued, their origin remained a mystery - a reality that two-thirds of those diagnosed with epilepsy share. After countless hospitalizations, medical procedures, and a lifetime of assisted living, Lauren still doesn’t have an answer. Lauren will never live a normal life, but she is not done fighting. For Lauren and so many others, finding a cure for epilepsy means complete freedom from seizures and the opportunity for a future filled with possibility. </p>
+							    		<a href="#" className="btn cure-btn lower-carousel-btn" role="button">
+								    		<div className="btn-text-container">
+								    			More about epilepsy
+								    		</div>
+								    	</a>
+								    	<a href="#" className="btn cure-btn lower-carousel-btn" role="button">
+								    		<div className="btn-text-container">
+								    			More about lauren
+								    		</div>
+								    	</a>
+								    </div>
+								   </div>
 					    	</div>
 						  </div>
 					    </div>

@@ -127,6 +127,7 @@ $.fn.easeScroll = function(options) {
         }
 
         function l(e) {
+            var overflow;
             var t = [],
                 o = S.scrollHeight;
             do {

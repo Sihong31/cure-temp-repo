@@ -1,8 +1,29 @@
 const easeScroll = require('./jquery.easeScroll.js');
-
 $('.carousel').carousel({
 	
 });
+
+// function test() {
+// 	console.log("hello from test function");
+// 	$('.carousel').on('slid.bs.carousel', function () { 
+// 		const carouselItems = $(".cure-carousel-item");
+// 		carouselItems.each(function(index){
+// 			if ($(carouselItems[index]).hasClass("active") && index !== 0) {
+// 				// $(this).find(".carousel-shoulder").css("opacity", .4);
+
+// 				$(this).find(".carousel-shoulder").animate({
+// 					opacity: 0.4
+// 				}, 500)
+// 			}
+// 			else {
+// 				$(this).find(".carousel-shoulder").css("opacity", 0);
+// 			}
+// 		});
+
+// 	}) 
+// }
+
+// test();
 
 function Parallax() {
 	this.mainImage = $(".main-image");
@@ -108,12 +129,12 @@ Parallax.prototype = {
 			$(window).scroll(function(e){
 			const scrolled = $(window).scrollTop();
 			// console.log(scrolled, "******", lowerContainerOffset/2);
-				if (scrolled > lowerContainerOffset/2) {
+				if (scrolled > lowerContainerOffset/1.5) {
 					if ($(lowerSlideRight[i]).css("opacity") == 0) {
 						$(lowerSlideRight[i]).fadeTo(500, 1);
 					}
 				}
-				if (scrolled < lowerContainerOffset/2){
+				if (scrolled < lowerContainerOffset/1.5){
 					if ($(lowerSlideRight[i]).css("opacity") == 1) {
 						$(lowerSlideRight[i]).fadeTo(500, 0);
 					}

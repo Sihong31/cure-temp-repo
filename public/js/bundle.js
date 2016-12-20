@@ -188,54 +188,58 @@
 										React.createElement('div', { className: 'col-xs-12 col-sm-6 lower-slide-left' }),
 										React.createElement(
 											'div',
-											{ className: 'col-xs-12 col-sm-6 lower-slide-right' },
+											{ className: 'right-content-container' },
 											React.createElement(
-												'p',
-												{ className: 'story-mini-headline' },
+												'div',
+												{ className: 'col-xs-12 col-sm-6 lower-slide-right' },
 												React.createElement(
-													'span',
-													{ className: 'brand-color-1' },
-													'Lauren'
+													'p',
+													{ className: 'story-mini-headline' },
+													React.createElement(
+														'span',
+														{ className: 'brand-color-1' },
+														'Lauren'
+													),
+													React.createElement(
+														'span',
+														null,
+														'Age 8'
+													),
+													'Enjoys lorem IPSUM DOLORE SU ANUM'
 												),
 												React.createElement(
-													'span',
-													null,
-													'Age 8'
+													'h1',
+													{ className: 'story-main-headline' },
+													'Epilepsy is ',
+													React.createElement(
+														'span',
+														{ className: 'brand-color-1' },
+														'suffering'
+													)
 												),
-												'Enjoys lorem IPSUM DOLORE SU ANUM'
-											),
-											React.createElement(
-												'h1',
-												{ className: 'story-main-headline' },
-												'Epilepsy is ',
+												React.createElement('hr', null),
 												React.createElement(
-													'span',
-													{ className: 'brand-color-1' },
-													'suffering'
-												)
-											),
-											React.createElement('hr', null),
-											React.createElement(
-												'p',
-												{ className: 'story-body-copy' },
-												'Like many people suffering from epilepsy, the disorder wreaked havoc on Lauren\u2019s developing brain as a child. As her seizures continued, their origin remained a mystery - a reality that two-thirds of those diagnosed with epilepsy share. After countless hospitalizations, medical procedures, and a lifetime of assisted living, Lauren still doesn\u2019t have an answer. Lauren will never live a normal life, but she is not done fighting. For Lauren and so many others, finding a cure for epilepsy means complete freedom from seizures and the opportunity for a future filled with possibility. '
-											),
-											React.createElement(
-												'a',
-												{ href: '#', className: 'btn cure-btn lower-carousel-btn', role: 'button' },
+													'p',
+													{ className: 'story-body-copy' },
+													'Like many people suffering from epilepsy, the disorder wreaked havoc on Lauren\u2019s developing brain as a child. As her seizures continued, their origin remained a mystery - a reality that two-thirds of those diagnosed with epilepsy share. After countless hospitalizations, medical procedures, and a lifetime of assisted living, Lauren still doesn\u2019t have an answer. Lauren will never live a normal life, but she is not done fighting. For Lauren and so many others, finding a cure for epilepsy means complete freedom from seizures and the opportunity for a future filled with possibility. '
+												),
 												React.createElement(
-													'div',
-													{ className: 'btn-text-container' },
-													'More about epilepsy'
-												)
-											),
-											React.createElement(
-												'a',
-												{ href: '#', className: 'btn cure-btn lower-carousel-btn', role: 'button' },
+													'a',
+													{ href: '#', className: 'btn cure-btn lower-carousel-btn', role: 'button' },
+													React.createElement(
+														'div',
+														{ className: 'btn-text-container' },
+														'More about epilepsy'
+													)
+												),
 												React.createElement(
-													'div',
-													{ className: 'btn-text-container' },
-													'More about lauren'
+													'a',
+													{ href: '#', className: 'btn cure-btn lower-carousel-btn', role: 'button' },
+													React.createElement(
+														'div',
+														{ className: 'btn-text-container' },
+														'More about lauren'
+													)
 												)
 											)
 										)
@@ -23303,8 +23307,29 @@
 	'use strict';
 	
 	var easeScroll = __webpack_require__(/*! ./jquery.easeScroll.js */ 186);
-	
 	$('.carousel').carousel({});
+	
+	// function test() {
+	// 	console.log("hello from test function");
+	// 	$('.carousel').on('slid.bs.carousel', function () { 
+	// 		const carouselItems = $(".cure-carousel-item");
+	// 		carouselItems.each(function(index){
+	// 			if ($(carouselItems[index]).hasClass("active") && index !== 0) {
+	// 				// $(this).find(".carousel-shoulder").css("opacity", .4);
+	
+	// 				$(this).find(".carousel-shoulder").animate({
+	// 					opacity: 0.4
+	// 				}, 500)
+	// 			}
+	// 			else {
+	// 				$(this).find(".carousel-shoulder").css("opacity", 0);
+	// 			}
+	// 		});
+	
+	// 	}) 
+	// }
+	
+	// test();
 	
 	function Parallax() {
 		this.mainImage = $(".main-image");
@@ -23407,12 +23432,12 @@
 				$(window).scroll(function (e) {
 					var scrolled = $(window).scrollTop();
 					// console.log(scrolled, "******", lowerContainerOffset/2);
-					if (scrolled > lowerContainerOffset / 2) {
+					if (scrolled > lowerContainerOffset / 1.5) {
 						if ($(lowerSlideRight[i]).css("opacity") == 0) {
 							$(lowerSlideRight[i]).fadeTo(500, 1);
 						}
 					}
-					if (scrolled < lowerContainerOffset / 2) {
+					if (scrolled < lowerContainerOffset / 1.5) {
 						if ($(lowerSlideRight[i]).css("opacity") == 1) {
 							$(lowerSlideRight[i]).fadeTo(500, 0);
 						}
@@ -23669,6 +23694,7 @@
 	        }
 	
 	        function l(e) {
+	            var overflow;
 	            var t = [],
 	                o = S.scrollHeight;
 	            do {

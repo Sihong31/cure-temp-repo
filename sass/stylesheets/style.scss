@@ -2,9 +2,15 @@
 @import 'variables';
 @import 'carousel';
 @import 'button';
+@import 'research';
+@import 'tiles';
 
 html {
-    overflow-y: scroll;
+    /*overflow-y: scroll;*/
+}
+
+body {
+    overflow-x: hidden;
 }
 
 .container {
