@@ -1,0 +1,33 @@
+{
+	"tiles": [
+		{
+			"id": 1,
+			"imgSrc": "tile-1.jpg",
+			"h2": "susan axelrod",
+			"h3": "founding chair",
+			"linkSrc": "#"
+		},
+		{
+			"id": 2,
+			"imgSrc": "tile-2.jpg",
+			"h2": "susan axelrod",
+			"h3": "founding chair",
+			"linkSrc": "#"
+
+		},
+		{
+			"id": 3,
+			"imgSrc": "tile-3.jpg",
+			"h2": "susan axelrod",
+			"h3": "founding chair",
+			"linkSrc": "#"
+		},
+		{
+			"id": 4,
+			"imgSrc": "tile-4.jpg",
+			"h2": "susan axelrod",
+			"h3": "founding chair",
+			"linkSrc": "#"
+		}
+	]
+}

@@ -1,6 +1,6 @@
 const React = require('react');
 const es6Promise = require('es6-promise').polyfill(); //IE10, IE11
-const slideData = require('../../data/data.json')
+const slideData = require('../../data/carousel.json')
 
 import Button from './button';
 

@@ -47,7 +47,7 @@ Parallax.prototype = {
 			const leftChange = -(29/lowerContainerHeight);
 			const checkWinWidth = window.innerWidth;
 			const scrolled = $(window).scrollTop();
-
+			
 			if (scrolled <= lowerContainerHeight) {
 			    mainImage.css("top", scrolled * topChange + "%");
 

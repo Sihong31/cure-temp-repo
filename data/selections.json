@@ -1,0 +1,19 @@
+{
+	"selections": [
+		{
+			"id": 1,
+			"desktopImg": "desktop-selection-1.jpg",
+			"mobileImg:": "mobile-selection-1.jpg"
+		},
+		{
+			"id": 2,
+			"desktopImg": "desktop-selection-2.jpg",
+			"mobileImg:": "mobile-selection-2.jpg"
+		},
+		{
+			"id": 3,
+			"desktopImg": "desktop-selection-3.jpg",
+			"mobileImg:": "mobile-selection-3.jpg"
+		}
+	]
+}

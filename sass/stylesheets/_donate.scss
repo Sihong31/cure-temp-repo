@@ -1,14 +1,16 @@
-.section-3 {
+.section-4 {
 	height: 100vh;
 	max-height: 1220px;
 	position: relative;
 	@media screen and (max-width: 767px) {
-		max-height: 875px;
+		height: 100vh;
+		max-height: 675px;
 	}
 	.left,
 	.right {
 		position: relative;
 		min-height: 100vh;
+/*		max-height: 900px;*/
 		padding-left: 0 ;
 		padding-right: 0;
 		@media screen and (max-width: 767px) {
@@ -20,59 +22,22 @@
 		max-width: 900px;
 	}
 	.right {
+	    /*min-height: 100vh;*/
+	    /*position: relative;*/
 	}
-	.left-content-container {
+	.left-content-container img {
+		min-height: 591px;
+		max-width: 914px;
+		width: 100%;
 		position: absolute;
 		top: 50%;
 		transform: translateY(-50%);
-		width: 100%;
 		@media screen and (max-width: 767px) {
-    		transform: translateY(0);
-		}
-		.row {
-			margin: 0;
-		}
-		.tile-container {
+			min-height: initial;
+			max-height: 200px;
 			position: relative;
-			padding-left: 0;
-			padding-right: 0;
-			img {
-				width: 100%;
-				z-index: 1;
-				@media screen and (max-width: 767px) {
-
-				}
-			}
-			h2, h3, a {
-				position: absolute;
-    			text-align: center;
-				text-transform: uppercase;	
-				width: 100%;
-				z-index: 2;
-			}
-			h2 {
-			    color: #ffffff;
-			    @include responsive-font(1.2vw, 12px, 24px);
-			    top: 75%;
-			    left: 50%;
-			    transform: translate(-50%,-75%);
-			}
-			h3 {
-			    color: #ffffff;
-			    @include responsive-font(1vw, 9px, 18px);
-				top: 80%;
-			    left: 50%;
-			    transform: translate(-50%,-80%);
-			}
-			a {
-				color: $brandColorRed;
-				@include responsive-font(1vw, 9px, 18px);
-			    top: 96%;
-			    left: 50%;
-			    transform: translate(-50%,-93%);
-			    text-decoration: underline;
-
-			}
+			top: 0;
+			transform: translateY(0);
 		}
 	}
 	.right-content-container {
@@ -99,6 +64,10 @@
 			color: $brandColorRed;
 		}
 	}
+	h3 {
+		@include subheadline()
+		text-transform: uppercase;
+	}
 	hr {
 		@include horizontal-rule()
 	}
@@ -109,7 +78,7 @@
 			@include responsive-font(3.5vw, 14px, 20px);
 		}
 	}
-	.tile-btn {
+	.research-btn {
 		margin-right: 15px;
 		margin-top: 15px;
 		@media screen and (max-width: 767px) {

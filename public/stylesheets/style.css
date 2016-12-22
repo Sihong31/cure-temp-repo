@@ -444,6 +444,7 @@
   position: relative; }
   @media screen and (max-width: 767px) {
     .section-2 {
+      height: 100vh;
       max-height: 675px; } }
   .section-2 .left,
   .section-2 .right {
@@ -472,6 +473,7 @@
     @media screen and (max-width: 767px) {
       .section-2 .left-content-container img {
         min-height: initial;
+        max-height: 200px;
         position: relative;
         top: 0;
         transform: translateY(0); } }
@@ -594,39 +596,39 @@
         z-index: 2; }
       .section-3 .left-content-container .tile-container h2 {
         color: #ffffff;
-        font-size: 1.3vw;
+        font-size: 1.2vw;
         top: 75%;
         left: 50%;
         transform: translate(-50%, -75%); }
-        @media (max-width: 1076.92308px) {
+        @media (max-width: 1000px) {
           .section-3 .left-content-container .tile-container h2 {
-            font-size: 14px; } }
-        @media (min-width: 1846.15385px) {
+            font-size: 12px; } }
+        @media (min-width: 2000px) {
           .section-3 .left-content-container .tile-container h2 {
             font-size: 24px; } }
       .section-3 .left-content-container .tile-container h3 {
         color: #ffffff;
-        font-size: 1.1vw;
+        font-size: 1vw;
         top: 80%;
         left: 50%;
         transform: translate(-50%, -80%); }
-        @media (max-width: 909.09091px) {
+        @media (max-width: 900px) {
           .section-3 .left-content-container .tile-container h3 {
-            font-size: 10px; } }
-        @media (min-width: 1636.36364px) {
+            font-size: 9px; } }
+        @media (min-width: 1800px) {
           .section-3 .left-content-container .tile-container h3 {
             font-size: 18px; } }
       .section-3 .left-content-container .tile-container a {
         color: #e51937;
-        font-size: 1.1vw;
-        top: 93%;
+        font-size: 1vw;
+        top: 96%;
         left: 50%;
         transform: translate(-50%, -93%);
         text-decoration: underline; }
-        @media (max-width: 909.09091px) {
+        @media (max-width: 900px) {
           .section-3 .left-content-container .tile-container a {
-            font-size: 10px; } }
-        @media (min-width: 1636.36364px) {
+            font-size: 9px; } }
+        @media (min-width: 1800px) {
           .section-3 .left-content-container .tile-container a {
             font-size: 18px; } }
   .section-3 .right-content-container {
@@ -701,6 +703,124 @@
         letter-spacing: 2px;
         margin: 15px auto 0 auto; }
         .section-3 .tile-btn .btn-text-container {
+          padding: 12.5px 55px; } }
+
+.section-4 {
+  height: 100vh;
+  max-height: 1220px;
+  position: relative; }
+  @media screen and (max-width: 767px) {
+    .section-4 {
+      height: 100vh;
+      max-height: 675px; } }
+  .section-4 .left,
+  .section-4 .right {
+    position: relative;
+    min-height: 100vh;
+    /*		max-height: 900px;*/
+    padding-left: 0;
+    padding-right: 0; }
+    @media screen and (max-width: 767px) {
+      .section-4 .left,
+      .section-4 .right {
+        min-height: 0;
+        max-height: 550px; } }
+  .section-4 .left {
+    max-width: 900px; }
+  .section-4 .right {
+    /*min-height: 100vh;*/
+    /*position: relative;*/ }
+  .section-4 .left-content-container img {
+    min-height: 591px;
+    max-width: 914px;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%); }
+    @media screen and (max-width: 767px) {
+      .section-4 .left-content-container img {
+        min-height: initial;
+        max-height: 200px;
+        position: relative;
+        top: 0;
+        transform: translateY(0); } }
+  .section-4 .right-content-container {
+    position: absolute;
+    top: 50%;
+    left: 48%;
+    transform: translate(-48%, -50%); }
+    @media screen and (max-width: 767px) {
+      .section-4 .right-content-container {
+        position: relative;
+        top: 0;
+        left: 0;
+        transform: translate(0, 0);
+        padding: 25px;
+        text-align: center; } }
+  .section-4 h1 {
+    font-family: "Bebas-Neue-Bold";
+    margin: 0;
+    text-transform: uppercase;
+    font-size: 6vw; }
+    @media (max-width: 666.66667px) {
+      .section-4 h1 {
+        font-size: 40px; } }
+    @media (min-width: 2666.66667px) {
+      .section-4 h1 {
+        font-size: 160px; } }
+    @media screen and (max-width: 767px) {
+      .section-4 h1 {
+        font-size: 8vw; } }
+  @media screen and (max-width: 767px) and (max-width: 350px) {
+    .section-4 h1 {
+      font-size: 28px; } }
+  @media screen and (max-width: 767px) and (min-width: 1000px) {
+    .section-4 h1 {
+      font-size: 80px; } }
+    .section-4 h1 span {
+      color: #e51937; }
+  .section-4 h3 {
+    font-family: "Bebas-Neue-Bold";
+    margin: 0;
+    text-transform: uppercase;
+    text-transform: uppercase; }
+  .section-4 hr {
+    border-top: 3px solid #e51937;
+    margin: 5px 0 25px 0;
+    text-align: left;
+    width: 100px; }
+    @media screen and (max-width: 767px) {
+      .section-4 hr {
+        border-top: 2px solid #e51937;
+        margin: 15px auto 25px auto; } }
+  .section-4 p {
+    font-family: "Sofia-Pro";
+    font-size: 1.2vw; }
+    @media (max-width: 1166.66667px) {
+      .section-4 p {
+        font-size: 14px; } }
+    @media (min-width: 2500px) {
+      .section-4 p {
+        font-size: 30px; } }
+    @media screen and (max-width: 767px) {
+      .section-4 p {
+        font-size: 3.5vw; } }
+  @media screen and (max-width: 767px) and (max-width: 400px) {
+    .section-4 p {
+      font-size: 14px; } }
+  @media screen and (max-width: 767px) and (min-width: 571.42857px) {
+    .section-4 p {
+      font-size: 20px; } }
+  .section-4 .research-btn {
+    margin-right: 15px;
+    margin-top: 15px; }
+    @media screen and (max-width: 767px) {
+      .section-4 .research-btn {
+        display: block;
+        font-size: 14px;
+        letter-spacing: 2px;
+        margin: 15px auto 0 auto; }
+        .section-4 .research-btn .btn-text-container {
           padding: 12.5px 55px; } }
 
 html {

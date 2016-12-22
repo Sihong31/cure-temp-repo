@@ -3,6 +3,7 @@
 	max-height: 1220px;
 	position: relative;
 	@media screen and (max-width: 767px) {
+		height: 100vh;
 		max-height: 675px;
 	}
 	.left,
@@ -33,6 +34,7 @@
 		transform: translateY(-50%);
 		@media screen and (max-width: 767px) {
 			min-height: initial;
+			max-height: 200px;
 			position: relative;
 			top: 0;
 			transform: translateY(0);
