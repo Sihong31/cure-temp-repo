@@ -5621,6 +5621,12 @@
 	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
+	var _form = __webpack_require__(/*! ./form */ 192);
+	
+	var _form2 = _interopRequireDefault(_form);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 	
 	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
@@ -5651,9 +5657,6 @@
 			};
 	
 			_this.state = { selections: [], donateActive: true, fundraiseActive: false, speakActive: false };
-			// this.donateOnClick = this.donateOnClick.bind(this);
-			// this.fundraiseOnClick = this.fundraiseOnClick.bind(this);
-			// this.speakOnClick = this.speakOnClick.bind(this);
 			return _this;
 		}
 	
@@ -5672,15 +5675,7 @@
 		}, {
 			key: 'donateTemplate',
 			value: function donateTemplate() {
-				return React.createElement(
-					'div',
-					null,
-					React.createElement(
-						'h4',
-						null,
-						'What would you like to donate?'
-					)
-				);
+				return React.createElement(_form2.default, null);
 			}
 		}, {
 			key: 'fundraiseTemplate',
@@ -24235,6 +24230,127 @@
 			}
 		]
 	};
+
+/***/ },
+/* 192 */
+/*!********************************!*\
+  !*** ./src/components/form.js ***!
+  \********************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var React = __webpack_require__(/*! react */ 3);
+	
+	var Form = function (_React$Component) {
+		_inherits(Form, _React$Component);
+	
+		function Form(props) {
+			_classCallCheck(this, Form);
+	
+			var _this = _possibleConstructorReturn(this, (Form.__proto__ || Object.getPrototypeOf(Form)).call(this, props));
+	
+			_this.handleOptionChange = function (changeEvent) {
+				_this.setState({
+					selectedOption: changeEvent.target.value
+				}, console.log(changeEvent.target.value));
+			};
+	
+			_this.handleFormSubmit = function (formSubmitEvent) {
+				formSubmitEvent.preventDefault();
+				console.log('You have selected:', _this.state.selectedOption);
+			};
+	
+			_this.state = { selectedOption: 'option1' };
+			return _this;
+		}
+	
+		_createClass(Form, [{
+			key: 'render',
+			value: function render() {
+				return React.createElement(
+					'div',
+					null,
+					React.createElement(
+						'form',
+						{ onSubmit: this.handleFormSubmit },
+						React.createElement(
+							'div',
+							{ className: 'form-group' },
+							React.createElement(
+								'label',
+								{ htmlFor: 'exampleInputPassword1' },
+								'What would you like to donate'
+							),
+							React.createElement('input', { type: 'password', className: 'form-control', id: 'exampleInputPassword1', placeholder: '$50.00/month' })
+						),
+						React.createElement(
+							'fieldset',
+							{ className: 'form-group' },
+							React.createElement(
+								'legend',
+								null,
+								'Radio buttons'
+							),
+							React.createElement(
+								'div',
+								{ className: 'form-check' },
+								React.createElement(
+									'label',
+									{ className: 'form-check-label' },
+									React.createElement('input', { type: 'radio', className: 'form-check-input', name: 'optionsRadios', id: 'optionsRadios1', value: 'option1', checked: this.state.selectedOption === 'option1', onChange: this.handleOptionChange }),
+									'Monthly'
+								),
+								React.createElement(
+									'label',
+									{ className: 'form-check-label' },
+									React.createElement('input', { type: 'radio', className: 'form-check-input', name: 'optionsRadios', id: 'optionsRadios2', value: 'option2', checked: this.state.selectedOption === 'option2', onChange: this.handleOptionChange }),
+									'One Time'
+								)
+							)
+						),
+						React.createElement(
+							'div',
+							{ className: 'form-check' },
+							React.createElement(
+								'label',
+								{ className: 'form-check-label' },
+								React.createElement('input', { type: 'checkbox', className: 'form-check-input' }),
+								'Give in honor of'
+							)
+						),
+						React.createElement(
+							'div',
+							{ className: 'form-group' },
+							React.createElement('label', { htmlFor: 'exampleInputPassword1' }),
+							React.createElement('input', { type: 'password', className: 'form-control', id: 'exampleInputPassword1', placeholder: 'Tribute Full Name' })
+						),
+						React.createElement(
+							'button',
+							{ type: 'submit', className: 'btn btn-primary' },
+							'Donate'
+						)
+					)
+				);
+			}
+		}]);
+	
+		return Form;
+	}(React.Component);
+	
+	exports.default = Form;
 
 /***/ }
 /******/ ]);

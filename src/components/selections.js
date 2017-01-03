@@ -1,16 +1,13 @@
 const React = require('react');
 const selectionData = require('../../data/selections.json')
 
-
+import Form from './form';
 
 class Selection extends React.Component {
 
 	constructor(props) {
 		super(props);
 		this.state = {selections: [], donateActive: true, fundraiseActive: false, speakActive: false };
-		// this.donateOnClick = this.donateOnClick.bind(this);
-		// this.fundraiseOnClick = this.fundraiseOnClick.bind(this);
-		// this.speakOnClick = this.speakOnClick.bind(this);
 	}
 
 	componentDidMount() {
@@ -37,10 +34,7 @@ class Selection extends React.Component {
 
 	donateTemplate() {
 		return (
-			<div>
-				<h4>What would you like to donate?</h4>
-				
-			</div>
+			<Form />
 		)
 	}	
 
