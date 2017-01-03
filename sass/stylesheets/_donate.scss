@@ -53,15 +53,68 @@
 	    	padding: 25px;
 	    	text-align: center;
 	    }
+	    .boxed-content {
+	    	border: 1px solid #000000;
+	    	margin-top: 20px;
+	    	max-width: 400px;
+	    	padding: 30px 25px;
+	    	span {
+	    		font-size: 28px;
+	    		font-family: $bebasNeueBold;
+	    		text-transform: uppercase;
+	    	}
+	    }
+	    .social-icons {
+	    	margin-top: 30px;
+	    	#social-icon-fb,
+	    	#social-icon-twitter {
+	    		color: $brandColorRed;
+	    		display: inline-block;
+	    		font-family: $bebasNeue;
+	    		font-size: 18px;	    		
+	    		position: relative;
+	    		text-transform: uppercase;
+	    	}
+
+	    	#social-icon-fb {
+	    		height: 26px;
+	    		padding-left: 25px;
+	    		&:before {
+	    			background: url(../images/selections/social-facebook-red.png) no-repeat 0 0;
+					content: "";
+					display: inline-block;
+					height: 26px;
+					width: 12px;
+					position: absolute;
+    				left: 0;
+    				top: -6px;
+	    		}
+	    	}
+	    	#social-icon-twitter {
+	    		height: 24px;
+	    		margin-left: 40px;
+	    		padding-left: 40px;
+	    		&:before {
+		    		background: url(../images/selections/social-twitter-red.png) no-repeat 0 0;
+	    			content: "";
+					display: inline-block;
+					height: 24px;
+					width: 28px;				
+					position: absolute;
+    				left: 0;
+	    		}
+	    	}
+	    }
 	}
 	h1 {
 		@include subheadline()
 		@include responsive-font(6vw, 40px, 160px);
+		color: #000;
 		@media screen and (max-width: 767px) {
 			@include responsive-font(8vw, 28px, 80px);
 		}
 		span {
-			color: $brandColorRed;
+			vertical-align: sub;
 		}
 	}
 	h3 {
@@ -78,7 +131,24 @@
 			@include responsive-font(3.5vw, 14px, 20px);
 		}
 	}
-	.research-btn {
+	.header-active {
+		  color: $brandColorRed;
+		  padding-left: 35px;
+		  position: relative;
+	  &:before {
+		  position: absolute;
+		  border-left: 20px solid $brandColorRed; 
+		  border-top: 20px solid transparent;
+		  border-bottom: 20px solid transparent;	  	
+		  content: "";
+		  width: 0; 
+		  height: 0; 
+		  left: 0;
+	      top: 50%;
+	      transform: translate(-0, -50%);
+	  } 	  
+	}
+	.fundraise-btn {
 		margin-right: 15px;
 		margin-top: 15px;
 		@media screen and (max-width: 767px) {

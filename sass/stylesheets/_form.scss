@@ -1,0 +1,128 @@
+.section-4 {
+	#donation-form {
+		.donate-inquiry {
+			width: 100%;
+		}
+		.donate-input {
+			border: 1px solid #777777;
+			font-size: 20px;
+			height: 50px;
+			margin: 10px 0 0 0;
+			max-width: 390px;
+    		padding-left: 15px;
+			width: 100%;
+		}
+		.donation-buttons {
+			margin-bottom: 15px;
+			width: 100%;
+			.donation-options {
+				display: none;
+			}
+		}
+		label {
+			@include body-copy()
+			@include responsive-font(1.2vw, 14px, 30px);
+			font-weight: normal;
+			@media screen and (max-width: 767px) {
+				@include responsive-font(3.5vw, 14px, 20px);
+			}
+		}
+		label.btn {
+			background: #fff;
+			border: 1px solid $brandColorRed;
+			border-radius: 0px;
+			color: $brandColorRed;
+			font-family: $sofiaPro;	
+			margin-right: 12px;
+			max-width: 123px;
+			width: 100%;		
+		}
+		label.active {
+			background: $brandColorRed;
+			color: #fff;
+		}
+		/* CUSTOM RADIO & CHECKBOXES http://stackoverflow.com/a/17541916/383904 */
+		/*for reference*/
+		.rad {
+			margin-right: 45px;
+		}
+
+		.rad > i {
+			margin-top: -3px;
+			margin-right: 10px;
+		}
+
+		.rad,
+		.ckb{
+		  cursor: pointer;
+		  user-select: none;
+		  -webkit-user-select: none;
+		  -webkit-touch-callout: none;
+		}
+		.rad > input,
+		.ckb > input{ /* HIDE ORG RADIO & CHECKBOX */
+		  visibility: hidden;
+		  position: absolute;
+		}
+		/* RADIO & CHECKBOX STYLES */
+		.rad > i,
+		.ckb > i{     /* DEFAULT <i> STYLE */
+		  display: inline-block;
+		  vertical-align: middle;
+		  width:  16px;
+		  height: 16px;
+		  border-radius: 50%;
+		  /*transition: 0.2s;*/
+		  box-shadow: inset 0 0 0 8px #ffffff;
+		  border: 1px solid gray;
+		  background: #ffffff;
+		}
+
+		/* CHECKBOX OVERWRITE STYLES */
+		.ckb > i {
+		  width: 20px;
+		  height: 20px;
+		  border-radius: 0px;
+		}
+		.rad:hover > i{ /* HOVER <i> STYLE */
+		  /*box-shadow: inset 0 0 0 3px #ffffff;*/
+		  /*background: #fff;*/
+		}
+		.rad > input:checked + i{ /* (RADIO CHECKED) <i> STYLE */
+		  box-shadow: inset 0 0 0 3px #ffffff;
+		  background: $brandColorRed;
+		}
+		/* CHECKBOX */
+		.ckb > input + i:after{
+		  content: "";
+		  display: block;
+		  height: 12px;
+		  width:  12px;
+		  margin: 3px;
+		  border-radius: 0px;
+		  transition: inherit;
+		  background: #ffffff;
+		}
+		.ckb > input:checked + i:after{ /* (RADIO CHECKED) <i> STYLE */
+		  background:  $brandColorRed;
+		}
+		.donation-submit-btn {
+			background: #ffffff;
+			border: 2px solid $brandColorRed;
+			border-radius: 0;
+			font-family: $tradeGothicBold;
+			opacity: .9;
+			padding: 5px;
+			width: 100%;
+   			max-width: 104px;
+			.submit-btn-container {
+				background: $brandColorRed;
+				color: #ffffff;
+				letter-spacing: 1px;
+				padding: 10px 25px;
+				text-transform: uppercase;
+				width: 100%;
+			}
+		}
+	}
+}

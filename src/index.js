@@ -1,11 +1,12 @@
 const React = require('react');
 const ReactDOM = require('react-dom');
-const main = require('./main.js');
+const main = require('./main');
 const tiles = require('./tiles');
+const donate = require('./donate');
 
 import Carousel from './components/carousel';
 import Tile from './components/tiles';
-import Selection from './components/selections';
+import Donation from './components/donations';
 
 ReactDOM.render(
 	<Carousel />,
@@ -18,6 +19,6 @@ ReactDOM.render(
 )
 
 ReactDOM.render(
-	<Selection />,
+	<Donation />,
 	document.getElementById('react-selections')
 )

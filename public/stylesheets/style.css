@@ -757,11 +757,55 @@
         transform: translate(0, 0);
         padding: 25px;
         text-align: center; } }
+    .section-4 .right-content-container .boxed-content {
+      border: 1px solid #000000;
+      margin-top: 20px;
+      max-width: 400px;
+      padding: 30px 25px; }
+      .section-4 .right-content-container .boxed-content span {
+        font-size: 28px;
+        font-family: "Bebas-Neue-Bold";
+        text-transform: uppercase; }
+    .section-4 .right-content-container .social-icons {
+      margin-top: 30px; }
+      .section-4 .right-content-container .social-icons #social-icon-fb,
+      .section-4 .right-content-container .social-icons #social-icon-twitter {
+        color: #e51937;
+        display: inline-block;
+        font-family: "Bebas-Neue";
+        font-size: 18px;
+        position: relative;
+        text-transform: uppercase; }
+      .section-4 .right-content-container .social-icons #social-icon-fb {
+        height: 26px;
+        padding-left: 25px; }
+        .section-4 .right-content-container .social-icons #social-icon-fb:before {
+          background: url(../images/selections/social-facebook-red.png) no-repeat 0 0;
+          content: "";
+          display: inline-block;
+          height: 26px;
+          width: 12px;
+          position: absolute;
+          left: 0;
+          top: -6px; }
+      .section-4 .right-content-container .social-icons #social-icon-twitter {
+        height: 24px;
+        margin-left: 40px;
+        padding-left: 40px; }
+        .section-4 .right-content-container .social-icons #social-icon-twitter:before {
+          background: url(../images/selections/social-twitter-red.png) no-repeat 0 0;
+          content: "";
+          display: inline-block;
+          height: 24px;
+          width: 28px;
+          position: absolute;
+          left: 0; }
   .section-4 h1 {
     font-family: "Bebas-Neue-Bold";
     margin: 0;
     text-transform: uppercase;
-    font-size: 6vw; }
+    font-size: 6vw;
+    color: #000; }
     @media (max-width: 666.66667px) {
       .section-4 h1 {
         font-size: 40px; } }
@@ -778,7 +822,7 @@
     .section-4 h1 {
       font-size: 80px; } }
     .section-4 h1 span {
-      color: #e51937; }
+      vertical-align: sub; }
   .section-4 h3 {
     font-family: "Bebas-Neue-Bold";
     margin: 0;
@@ -811,17 +855,153 @@
   @media screen and (max-width: 767px) and (min-width: 571.42857px) {
     .section-4 p {
       font-size: 20px; } }
-  .section-4 .research-btn {
+  .section-4 .header-active {
+    color: #e51937;
+    padding-left: 35px;
+    position: relative; }
+    .section-4 .header-active:before {
+      position: absolute;
+      border-left: 20px solid #e51937;
+      border-top: 20px solid transparent;
+      border-bottom: 20px solid transparent;
+      content: "";
+      width: 0;
+      height: 0;
+      left: 0;
+      top: 50%;
+      transform: translate(0, -50%); }
+  .section-4 .fundraise-btn {
     margin-right: 15px;
     margin-top: 15px; }
     @media screen and (max-width: 767px) {
-      .section-4 .research-btn {
+      .section-4 .fundraise-btn {
         display: block;
         font-size: 14px;
         letter-spacing: 2px;
         margin: 15px auto 0 auto; }
-        .section-4 .research-btn .btn-text-container {
+        .section-4 .fundraise-btn .btn-text-container {
           padding: 12.5px 55px; } }
+
+.section-4 #donation-form {
+  /* CUSTOM RADIO & CHECKBOXES http://stackoverflow.com/a/17541916/383904 */
+  /*for reference*/
+  /* RADIO & CHECKBOX STYLES */
+  /* CHECKBOX OVERWRITE STYLES */
+  /* CHECKBOX */ }
+  .section-4 #donation-form .donate-inquiry {
+    width: 100%; }
+  .section-4 #donation-form .donate-input {
+    border: 1px solid #777777;
+    font-size: 20px;
+    height: 50px;
+    margin: 10px 0 0 0;
+    max-width: 390px;
+    padding-left: 15px;
+    width: 100%; }
+  .section-4 #donation-form .donation-buttons {
+    margin-bottom: 15px;
+    width: 100%; }
+    .section-4 #donation-form .donation-buttons .donation-options {
+      display: none; }
+  .section-4 #donation-form label {
+    font-family: "Sofia-Pro";
+    font-size: 1.2vw;
+    font-weight: normal; }
+    @media (max-width: 1166.66667px) {
+      .section-4 #donation-form label {
+        font-size: 14px; } }
+    @media (min-width: 2500px) {
+      .section-4 #donation-form label {
+        font-size: 30px; } }
+    @media screen and (max-width: 767px) {
+      .section-4 #donation-form label {
+        font-size: 3.5vw; } }
+  @media screen and (max-width: 767px) and (max-width: 400px) {
+    .section-4 #donation-form label {
+      font-size: 14px; } }
+  @media screen and (max-width: 767px) and (min-width: 571.42857px) {
+    .section-4 #donation-form label {
+      font-size: 20px; } }
+  .section-4 #donation-form label.btn {
+    background: #fff;
+    border: 1px solid #e51937;
+    border-radius: 0px;
+    color: #e51937;
+    font-family: "Sofia-Pro";
+    margin-right: 12px;
+    max-width: 123px;
+    width: 100%; }
+  .section-4 #donation-form label.active {
+    background: #e51937;
+    color: #fff; }
+  .section-4 #donation-form .rad {
+    margin-right: 45px; }
+  .section-4 #donation-form .rad > i {
+    margin-top: -3px;
+    margin-right: 10px; }
+  .section-4 #donation-form .rad,
+  .section-4 #donation-form .ckb {
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none; }
+  .section-4 #donation-form .rad > input,
+  .section-4 #donation-form .ckb > input {
+    /* HIDE ORG RADIO & CHECKBOX */
+    visibility: hidden;
+    position: absolute; }
+  .section-4 #donation-form .rad > i,
+  .section-4 #donation-form .ckb > i {
+    /* DEFAULT <i> STYLE */
+    display: inline-block;
+    vertical-align: middle;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    /*transition: 0.2s;*/
+    box-shadow: inset 0 0 0 8px #ffffff;
+    border: 1px solid gray;
+    background: #ffffff; }
+  .section-4 #donation-form .ckb > i {
+    width: 20px;
+    height: 20px;
+    border-radius: 0px; }
+  .section-4 #donation-form .rad:hover > i {
+    /* HOVER <i> STYLE */
+    /*box-shadow: inset 0 0 0 3px #ffffff;*/
+    /*background: #fff;*/ }
+  .section-4 #donation-form .rad > input:checked + i {
+    /* (RADIO CHECKED) <i> STYLE */
+    box-shadow: inset 0 0 0 3px #ffffff;
+    background: #e51937; }
+  .section-4 #donation-form .ckb > input + i:after {
+    content: "";
+    display: block;
+    height: 12px;
+    width: 12px;
+    margin: 3px;
+    border-radius: 0px;
+    transition: inherit;
+    background: #ffffff; }
+  .section-4 #donation-form .ckb > input:checked + i:after {
+    /* (RADIO CHECKED) <i> STYLE */
+    background: #e51937; }
+  .section-4 #donation-form .donation-submit-btn {
+    background: #ffffff;
+    border: 2px solid #e51937;
+    border-radius: 0;
+    font-family: "Trade-Gothic-bd20";
+    opacity: .9;
+    padding: 5px;
+    width: 100%;
+    max-width: 104px; }
+    .section-4 #donation-form .donation-submit-btn .submit-btn-container {
+      background: #e51937;
+      color: #ffffff;
+      letter-spacing: 1px;
+      padding: 10px 25px;
+      text-transform: uppercase;
+      width: 100%; }
 
 html {
   /*overflow-y: scroll;*/ }
