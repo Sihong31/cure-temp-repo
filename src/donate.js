@@ -30,13 +30,13 @@ DonateSection.prototype = {
 		$("body").on("click", donationButtons, function() {
 				const donatePlaceholder = $("#donation-form #donation");
 				if ( this.value === "option1" ) {
-					donatePlaceholder.attr("placeholder", "$25.00/month")
+					donatePlaceholder.attr("placeholder", "$25.00")
 				}		
 				if ( this.value === "option2" ) {
-					donatePlaceholder.attr("placeholder", "$50.00/month")
+					donatePlaceholder.attr("placeholder", "$50.00")
 				}		
 				if ( this.value === "option3" ) {
-					donatePlaceholder.attr("placeholder", "$100.00/month")
+					donatePlaceholder.attr("placeholder", "$100.00")
 				}
 		});
 	}

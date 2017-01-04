@@ -112,14 +112,14 @@ class Donation extends React.Component {
 						</div>
 						<div className="row">
 							<div className="col-xs-12 p-0 selections">
-								<div className="col-xs-4 col-sm-12 selection-container selection-active">
-									<h1 onClick={this.donateOnClick} className="selection" id="selection-donate"><span>donate</span></h1>
+								<div onClick={this.donateOnClick} className="col-xs-4 col-sm-12 selection-container selection-active">
+									<h1 className="selection" id="selection-donate"><span>donate</span></h1>
 								</div>
-								<div className="col-xs-4 col-sm-12 selection-container">
-									<h1 onClick={this.fundraiseOnClick} className="selection" id="selection-fundraise"><span>fundraise</span></h1>
+								<div onClick={this.fundraiseOnClick} className="col-xs-4 col-sm-12 selection-container">
+									<h1 className="selection" id="selection-fundraise"><span>fundraise</span></h1>
 								</div>
-								<div className="col-xs-4 col-sm-12 selection-container">
-									<h1 onClick={this.speakOnClick} className="selection" id="selection-speak"><span>speak up</span></h1>
+								<div onClick={this.speakOnClick} className="col-xs-4 col-sm-12 selection-container">
+									<h1 className="selection" id="selection-speak"><span>speak up</span></h1>
 								</div>
 							</div>
 						</div>

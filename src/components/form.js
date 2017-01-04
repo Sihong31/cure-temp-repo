@@ -35,7 +35,7 @@ class Form extends React.Component {
 				<form id="donation-form" onSubmit={this.handleFormSubmit}>
 				  <div className="form-group donate-input-container">
 				    <label className="donate-inquiry hidden-xs" htmlFor="donation">What would you like to donate</label>
-				    <input type="text" className="form-control" className="donate-input" id="donation" placeholder="$25.00/month"/>
+				    <input type="text" className="form-control" className="donate-input" id="donation" placeholder="$25.00"/>
 				  </div>
 
 				  <DonationOptions />

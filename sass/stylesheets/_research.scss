@@ -1,5 +1,5 @@
 .section-2 {
-	height: 100vh;
+	/*height: 100vh;*/
 	max-height: 1220px;
 	position: relative;
 	@media screen and (max-width: 767px) {
@@ -9,7 +9,7 @@
 	.left,
 	.right {
 		position: relative;
-		min-height: 100vh;
+		/*min-height: 100vh;*/
 /*		max-height: 900px;*/
 		padding-left: 0 ;
 		padding-right: 0;
@@ -19,7 +19,8 @@
 		}
 	}
 	.left {
-		max-width: 900px;
+		/*max-width: 900px;*/
+		max-width: 100%;
 	}
 	.right {
 	    /*min-height: 100vh;*/
@@ -27,11 +28,13 @@
 	}
 	.left-content-container img {
 		min-height: 591px;
-		max-width: 914px;
+		/*max-width: 914px;*/
+		max-width: 100%;
 		width: 100%;
-		position: absolute;
-		top: 50%;
-		transform: translateY(-50%);
+		/*position: absolute;*/
+		position: relative;
+		/*top: 50%;*/
+		/*transform: translateY(-50%);*/
 		@media screen and (max-width: 767px) {
 			min-height: initial;
 			max-height: 200px;
@@ -42,9 +45,17 @@
 	}
 	.right-content-container {
 		position: absolute;
+		padding: 0 40px;
+		/*position: relative;*/
 	    top: 50%;
-	    left: 48%;
-	    transform: translate(-48%, -50%);
+	    left: 0;
+	    /*left: 48%;*/
+	    /*transform: translate(-48%, -50%);*/
+	    transform: translate(0, 50%);
+	    @media screen and (min-width: 768px) and (max-width: 1200px) {
+	    	padding: 0 25px;
+			transform: translate(0, 15%);
+		}
 	    @media screen and (max-width: 767px) {
 	    	position: relative;
 	    	top: 0;

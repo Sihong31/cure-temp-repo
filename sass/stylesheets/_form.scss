@@ -22,21 +22,21 @@
 		}
 		.donation-buttons {
 			margin-bottom: 15px;
+			max-width: 540px;
 			width: 100%;
 			@media screen and (max-width: 767px) {
 				margin-bottom: 25px;
 				text-align: left;
-				max-width: 540px;
 			}
 			.donation-options {
 				display: none;
 			}
 		}
 		.time-options-container {
+			max-width: 540px;
 			@media screen and (max-width: 767px) {
 			    margin-left: auto;
 			    margin-right: auto;
-			    max-width: 540px;
 			    width: 100%;
 
 			}
@@ -47,15 +47,15 @@
 			}
 		}
 		.tribute-container {
+			max-width: 540px;
 			@media screen and (max-width: 767px) {
 			    margin-left: auto;
 			    margin-right: auto;
 			    width: 100%;
-			    max-width: 540px;
 			    text-align: left;
 			}
 			.tribute-name-ckb {
-				margin-bottom: 10px;
+				margin-bottom: 10px!important;
 				/*margin-right: 10px;*/
 			}
 			.tribute-name-label {
@@ -187,7 +187,7 @@
 	.learn-more {
 		font-family: $sofiaPro;
 		font-size: 13px;
-		margin-top: 30px;
+		margin-top: 15px;
 		@media screen and (max-width: 767px) {
 		    font-size: 14px;
     		margin-top: 10px;

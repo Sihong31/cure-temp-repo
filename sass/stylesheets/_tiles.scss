@@ -1,14 +1,17 @@
 .section-3 {
-	height: 100vh;
+	/*height: 100vh;*/
 	max-height: 1220px;
 	position: relative;
 	@media screen and (max-width: 767px) {
-		    max-height: 875px;
+		    /*max-height: 875px;*/
+		    max-height: 100%;
+    		height: 100%;
+    		margin-bottom: 40px;
 	}
 	.left,
 	.right {
 		position: relative;
-		min-height: 100vh;
+		/*min-height: 100vh;*/
 		padding-left: 0 ;
 		padding-right: 0;
 		@media screen and (max-width: 767px) {
@@ -17,18 +20,20 @@
 		}
 	}
 	.left {
-		max-width: 900px;
+		/*max-width: 900px;*/
+		max-width: 100%;
 	}
 	.right {
 	}
 	.left-content-container {
-		position: absolute;
+/*		position: absolute;
 		top: 50%;
-		transform: translateY(-50%);
+		transform: translateY(-50%);*/
+		position: relative;
 		width: 100%;
 		@media screen and (max-width: 767px) {
 			position: relative;
-			max-width: 415px;
+			/*max-width: 415px;*/
     		margin: 0 auto;
     		transform: translateY(0);
 		}
@@ -79,10 +84,17 @@
 		}
 	}
 	.right-content-container {
+		padding: 0 100px;
 		position: absolute;
+		transform: translate(0%, 100%);
+		@media screen and (min-width: 768px) and (max-width: 1080px) {
+			padding: 0 25px;
+			transform: translate(0%, 50%);
+		}
+/*		position: absolute;
 	    top: 50%;
 	    left: 48%;
-	    transform: translate(-48%, -50%);
+	    transform: translate(-48%, -50%);*/
 	    @media screen and (max-width: 767px) {
 	    	position: relative;
 	    	top: 0;
@@ -94,7 +106,7 @@
 	}
 	h1 {
 		@include subheadline()
-		@include responsive-font(6vw, 40px, 160px);
+		@include responsive-font(5vw, 40px, 160px);
 		@media screen and (max-width: 767px) {
 			@include responsive-font(8vw, 28px, 80px);
 		}

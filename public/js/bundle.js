@@ -4481,7 +4481,7 @@
   \*******************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	var require;var __WEBPACK_AMD_DEFINE_RESULT__;/* WEBPACK VAR INJECTION */(function(process, global, module) {'use strict';
+	var __WEBPACK_AMD_DEFINE_RESULT__;var require;/* WEBPACK VAR INJECTION */(function(process, global, module) {'use strict';
 	
 	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 	
@@ -5823,10 +5823,10 @@
 									{ className: 'col-xs-12 p-0 selections' },
 									React.createElement(
 										'div',
-										{ className: 'col-xs-4 col-sm-12 selection-container selection-active' },
+										{ onClick: this.donateOnClick, className: 'col-xs-4 col-sm-12 selection-container selection-active' },
 										React.createElement(
 											'h1',
-											{ onClick: this.donateOnClick, className: 'selection', id: 'selection-donate' },
+											{ className: 'selection', id: 'selection-donate' },
 											React.createElement(
 												'span',
 												null,
@@ -5836,10 +5836,10 @@
 									),
 									React.createElement(
 										'div',
-										{ className: 'col-xs-4 col-sm-12 selection-container' },
+										{ onClick: this.fundraiseOnClick, className: 'col-xs-4 col-sm-12 selection-container' },
 										React.createElement(
 											'h1',
-											{ onClick: this.fundraiseOnClick, className: 'selection', id: 'selection-fundraise' },
+											{ className: 'selection', id: 'selection-fundraise' },
 											React.createElement(
 												'span',
 												null,
@@ -5849,10 +5849,10 @@
 									),
 									React.createElement(
 										'div',
-										{ className: 'col-xs-4 col-sm-12 selection-container' },
+										{ onClick: this.speakOnClick, className: 'col-xs-4 col-sm-12 selection-container' },
 										React.createElement(
 											'h1',
-											{ onClick: this.speakOnClick, className: 'selection', id: 'selection-speak' },
+											{ className: 'selection', id: 'selection-speak' },
 											React.createElement(
 												'span',
 												null,
@@ -5977,7 +5977,7 @@
 								{ className: 'donate-inquiry hidden-xs', htmlFor: 'donation' },
 								'What would you like to donate'
 							),
-							React.createElement('input', (_React$createElement = { type: 'text', className: 'form-control' }, _defineProperty(_React$createElement, 'className', 'donate-input'), _defineProperty(_React$createElement, 'id', 'donation'), _defineProperty(_React$createElement, 'placeholder', '$25.00/month'), _React$createElement))
+							React.createElement('input', (_React$createElement = { type: 'text', className: 'form-control' }, _defineProperty(_React$createElement, 'className', 'donate-input'), _defineProperty(_React$createElement, 'id', 'donation'), _defineProperty(_React$createElement, 'placeholder', '$25.00'), _React$createElement))
 						),
 						React.createElement(_donationOptions2.default, null),
 						React.createElement(_timeOptions2.default, null),
@@ -24560,13 +24560,13 @@
 			$("body").on("click", donationButtons, function () {
 				var donatePlaceholder = $("#donation-form #donation");
 				if (this.value === "option1") {
-					donatePlaceholder.attr("placeholder", "$25.00/month");
+					donatePlaceholder.attr("placeholder", "$25.00");
 				}
 				if (this.value === "option2") {
-					donatePlaceholder.attr("placeholder", "$50.00/month");
+					donatePlaceholder.attr("placeholder", "$50.00");
 				}
 				if (this.value === "option3") {
-					donatePlaceholder.attr("placeholder", "$100.00/month");
+					donatePlaceholder.attr("placeholder", "$100.00");
 				}
 			});
 		}
