@@ -3,7 +3,7 @@
 	max-height: 1220px;
 	position: relative;
 	@media screen and (max-width: 767px) {
-		max-height: 875px;
+		    max-height: 875px;
 	}
 	.left,
 	.right {
@@ -27,6 +27,9 @@
 		transform: translateY(-50%);
 		width: 100%;
 		@media screen and (max-width: 767px) {
+			position: relative;
+			max-width: 415px;
+    		margin: 0 auto;
     		transform: translateY(0);
 		}
 		.row {

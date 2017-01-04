@@ -1,22 +1,71 @@
 .section-4 {
 	#donation-form {
-		.donate-inquiry {
-			width: 100%;
-		}
-		.donate-input {
-			border: 1px solid #777777;
-			font-size: 20px;
-			height: 50px;
-			margin: 10px 0 0 0;
-			max-width: 390px;
-    		padding-left: 15px;
-			width: 100%;
+		.donate-input-container {
+			@media screen and (max-width: 767px) {
+				text-align: center;
+			}
+			.donate-inquiry {
+				width: 100%;
+			}
+			.donate-input {
+				border: 1px solid #777777;
+				font-size: 20px;
+				height: 50px;
+				margin: 10px 0 0 0;
+				max-width: 390px;
+	    		padding-left: 15px;
+				width: 100%;
+				@media screen and (max-width: 767px) {
+					max-width: 540px;
+				}
+			}		
 		}
 		.donation-buttons {
 			margin-bottom: 15px;
 			width: 100%;
+			@media screen and (max-width: 767px) {
+				margin-bottom: 25px;
+				text-align: left;
+				max-width: 540px;
+			}
 			.donation-options {
 				display: none;
+			}
+		}
+		.time-options-container {
+			@media screen and (max-width: 767px) {
+			    margin-left: auto;
+			    margin-right: auto;
+			    max-width: 540px;
+			    width: 100%;
+
+			}
+			.time-option {
+				@media screen and (max-width: 767px) {
+					text-align: left;
+				}
+			}
+		}
+		.tribute-container {
+			@media screen and (max-width: 767px) {
+			    margin-left: auto;
+			    margin-right: auto;
+			    width: 100%;
+			    max-width: 540px;
+			    text-align: left;
+			}
+			.tribute-name-ckb {
+				margin-bottom: 10px;
+				/*margin-right: 10px;*/
+			}
+			.tribute-name-label {
+				width: 100%;
+	    		max-width: 240px;
+				#tribute-name {
+					border-radius: 0px;
+					font-family: $sofiaPro;
+					font-size: 16px;
+				}
 			}
 		}
 		label {
@@ -44,12 +93,15 @@
 		/* CUSTOM RADIO & CHECKBOXES http://stackoverflow.com/a/17541916/383904 */
 		/*for reference*/
 		.rad {
-			margin-right: 45px;
+			/*margin-right: 45px;*/
 		}
 
 		.rad > i {
 			margin-top: -3px;
 			margin-right: 10px;
+			@media screen and (max-width: 767px) {
+				margin-right: 0;
+			}
 		}
 
 		.rad,
@@ -112,9 +164,13 @@
 			border-radius: 0;
 			font-family: $tradeGothicBold;
 			opacity: .9;
-			padding: 5px;
+			padding: 2px;
 			width: 100%;
    			max-width: 104px;
+   			@media screen and (max-width: 767px) {
+   				font-size: 16px;
+				max-width: 540px;
+			}
 			.submit-btn-container {
 				background: $brandColorRed;
 				color: #ffffff;
@@ -122,7 +178,23 @@
 				padding: 10px 25px;
 				text-transform: uppercase;
 				width: 100%;
+				@media screen and (max-width: 767px) {
+					letter-spacing: 2px;
+				}	
 			}
+		}
+	}
+	.learn-more {
+		font-family: $sofiaPro;
+		font-size: 13px;
+		margin-top: 30px;
+		@media screen and (max-width: 767px) {
+		    font-size: 14px;
+    		margin-top: 10px;
+    	}
+		a, a:hover {
+			color: $brandColorRed;
+			text-decoration: underline;
 		}
 	}
 }

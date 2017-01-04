@@ -4,7 +4,7 @@
 	position: relative;
 	@media screen and (max-width: 767px) {
 		height: 100vh;
-		max-height: 675px;
+		max-height: 680px;
 	}
 	.left,
 	.right {
@@ -22,8 +22,9 @@
 		max-width: 900px;
 	}
 	.right {
-	    /*min-height: 100vh;*/
-	    /*position: relative;*/
+		@media screen and (max-width: 767px) {
+			margin-bottom: 60px;
+		}
 	}
 	.left-content-container img {
 		min-height: 591px;
@@ -53,11 +54,20 @@
 	    	padding: 25px;
 	    	text-align: center;
 	    }
+	    .speak-up-copy {
+	    	@media screen and (max-width: 767px) {
+	    		margin-top: 40px;
+	    		margin-bottom: 20px;
+	    	}
+	    }
 	    .boxed-content {
 	    	border: 1px solid #000000;
 	    	margin-top: 20px;
 	    	max-width: 400px;
 	    	padding: 30px 25px;
+	    	@media screen and (max-width: 767px) {
+	    		margin: 0 auto;
+	    	}
 	    	span {
 	    		font-size: 28px;
 	    		font-family: $bebasNeueBold;
@@ -92,8 +102,10 @@
 	    	}
 	    	#social-icon-twitter {
 	    		height: 24px;
-	    		margin-left: 40px;
 	    		padding-left: 40px;
+	    		@media screen and (max-width: 767px) {
+	    			margin-left: 0;
+	    		}
 	    		&:before {
 		    		background: url(../images/selections/social-twitter-red.png) no-repeat 0 0;
 	    			content: "";
@@ -131,22 +143,63 @@
 			@include responsive-font(3.5vw, 14px, 20px);
 		}
 	}
-	.header-active {
-		  color: $brandColorRed;
+	.selections-header {
+		font-size: 40px;
+		margin-bottom: 20px;
+	}
+	.selections {
+		@media screen and (max-width: 767px) {
+			margin-bottom: 15px;
+			padding: 0px 5px;
+			.selection-container {
+				border-top: 1px solid $brandColorRed;
+				border-bottom: 1px solid $brandColorRed;
+				border-left: 1px solid $brandColorRed;
+	    		padding: 20px 15px;
+				h1.selection {
+					color: $brandColorRed;
+					font-size: 22px;
+					padding-left: 0;
+				}
+			}
+			.selection-container:last-of-type {
+				border-right: 1px solid $brandColorRed;
+			}
+		}
+	}
+	.selection-active { 
 		  padding-left: 35px;
 		  position: relative;
-	  &:before {
-		  position: absolute;
-		  border-left: 20px solid $brandColorRed; 
-		  border-top: 20px solid transparent;
-		  border-bottom: 20px solid transparent;	  	
-		  content: "";
-		  width: 0; 
-		  height: 0; 
-		  left: 0;
-	      top: 50%;
-	      transform: translate(-0, -50%);
-	  } 	  
+		  @media screen and (max-width: 767px) {
+		  	background: $brandColorRed;
+		  }
+		  h1.selection {
+		  	  color: $brandColorRed;
+		  	  @media screen and (max-width: 767px) {
+		  	  	color: #ffffff!important;
+		  	  }
+			  &:before {
+				  position: absolute;
+				  border-left: 20px solid $brandColorRed; 
+				  border-top: 20px solid transparent;
+				  border-bottom: 20px solid transparent;	  	
+				  content: "";
+				  width: 0; 
+				  height: 0;
+				  left: 0;
+			      top: 50%;
+			      transform: translate(-0, -50%);
+			      @media screen and (max-width: 767px) {
+			      	display: none;
+			      	visibility: hidden;
+			      }
+			  } 	  
+		  }
+	}
+	.fundraise-copy {
+		@media screen and (max-width: 767px) {
+			margin-top: 40px;
+		}
 	}
 	.fundraise-btn {
 		margin-right: 15px;
@@ -155,9 +208,9 @@
 			display: block;
 		    font-size: 14px;
 		    letter-spacing: 2px;
-		    margin: 15px auto 0 auto;
+		    margin: 15px auto 60px auto;
 		    .btn-text-container {
-		    	padding: 12.5px 55px;
+		    	padding: 20px 40px;
 		    }
 		}
 	}

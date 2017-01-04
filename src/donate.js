@@ -9,10 +9,10 @@ DonateSection.prototype = {
 	constructor: DonateSection,
 
 	activateHeader: function() {
-		const headers = ".section-4 h1.selection";
+		const headers = ".section-4 .selection-container";
 		$("body").on("click", headers, function() {
-			$(this).addClass("header-active");
-			$(this).siblings("h1").removeClass("header-active");
+			$(this).addClass("selection-active");
+			$(this).siblings().removeClass("selection-active");
 		});
 	},
 
@@ -20,7 +20,7 @@ DonateSection.prototype = {
 		const donateBtns = ".section-4 .donation-buttons label";
 		$("body").on("click", donateBtns, function() {
 			$(this).addClass("active");
-			$(this).siblings("label").removeClass("active");
+			$(this).parent().siblings().children("label").removeClass("active");
 		});
 	},
 

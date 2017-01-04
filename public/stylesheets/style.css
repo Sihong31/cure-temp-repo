@@ -578,6 +578,9 @@
     width: 100%; }
     @media screen and (max-width: 767px) {
       .section-3 .left-content-container {
+        position: relative;
+        max-width: 415px;
+        margin: 0 auto;
         transform: translateY(0); } }
     .section-3 .left-content-container .row {
       margin: 0; }
@@ -712,7 +715,7 @@
   @media screen and (max-width: 767px) {
     .section-4 {
       height: 100vh;
-      max-height: 675px; } }
+      max-height: 680px; } }
   .section-4 .left,
   .section-4 .right {
     position: relative;
@@ -727,9 +730,9 @@
         max-height: 550px; } }
   .section-4 .left {
     max-width: 900px; }
-  .section-4 .right {
-    /*min-height: 100vh;*/
-    /*position: relative;*/ }
+  @media screen and (max-width: 767px) {
+    .section-4 .right {
+      margin-bottom: 60px; } }
   .section-4 .left-content-container img {
     min-height: 591px;
     max-width: 914px;
@@ -757,11 +760,18 @@
         transform: translate(0, 0);
         padding: 25px;
         text-align: center; } }
+    @media screen and (max-width: 767px) {
+      .section-4 .right-content-container .speak-up-copy {
+        margin-top: 40px;
+        margin-bottom: 20px; } }
     .section-4 .right-content-container .boxed-content {
       border: 1px solid #000000;
       margin-top: 20px;
       max-width: 400px;
       padding: 30px 25px; }
+      @media screen and (max-width: 767px) {
+        .section-4 .right-content-container .boxed-content {
+          margin: 0 auto; } }
       .section-4 .right-content-container .boxed-content span {
         font-size: 28px;
         font-family: "Bebas-Neue-Bold";
@@ -790,8 +800,10 @@
           top: -6px; }
       .section-4 .right-content-container .social-icons #social-icon-twitter {
         height: 24px;
-        margin-left: 40px;
         padding-left: 40px; }
+        @media screen and (max-width: 767px) {
+          .section-4 .right-content-container .social-icons #social-icon-twitter {
+            margin-left: 0; } }
         .section-4 .right-content-container .social-icons #social-icon-twitter:before {
           background: url(../images/selections/social-twitter-red.png) no-repeat 0 0;
           content: "";
@@ -855,21 +867,53 @@
   @media screen and (max-width: 767px) and (min-width: 571.42857px) {
     .section-4 p {
       font-size: 20px; } }
-  .section-4 .header-active {
-    color: #e51937;
+  .section-4 .selections-header {
+    font-size: 40px;
+    margin-bottom: 20px; }
+  @media screen and (max-width: 767px) {
+    .section-4 .selections {
+      margin-bottom: 15px;
+      padding: 0px 5px; }
+      .section-4 .selections .selection-container {
+        border-top: 1px solid #e51937;
+        border-bottom: 1px solid #e51937;
+        border-left: 1px solid #e51937;
+        padding: 20px 15px; }
+        .section-4 .selections .selection-container h1.selection {
+          color: #e51937;
+          font-size: 22px;
+          padding-left: 0; }
+      .section-4 .selections .selection-container:last-of-type {
+        border-right: 1px solid #e51937; } }
+  .section-4 .selection-active {
     padding-left: 35px;
     position: relative; }
-    .section-4 .header-active:before {
-      position: absolute;
-      border-left: 20px solid #e51937;
-      border-top: 20px solid transparent;
-      border-bottom: 20px solid transparent;
-      content: "";
-      width: 0;
-      height: 0;
-      left: 0;
-      top: 50%;
-      transform: translate(0, -50%); }
+    @media screen and (max-width: 767px) {
+      .section-4 .selection-active {
+        background: #e51937; } }
+    .section-4 .selection-active h1.selection {
+      color: #e51937; }
+      @media screen and (max-width: 767px) {
+        .section-4 .selection-active h1.selection {
+          color: #ffffff !important; } }
+      .section-4 .selection-active h1.selection:before {
+        position: absolute;
+        border-left: 20px solid #e51937;
+        border-top: 20px solid transparent;
+        border-bottom: 20px solid transparent;
+        content: "";
+        width: 0;
+        height: 0;
+        left: 0;
+        top: 50%;
+        transform: translate(0, -50%); }
+        @media screen and (max-width: 767px) {
+          .section-4 .selection-active h1.selection:before {
+            display: none;
+            visibility: hidden; } }
+  @media screen and (max-width: 767px) {
+    .section-4 .fundraise-copy {
+      margin-top: 40px; } }
   .section-4 .fundraise-btn {
     margin-right: 15px;
     margin-top: 15px; }
@@ -878,9 +922,9 @@
         display: block;
         font-size: 14px;
         letter-spacing: 2px;
-        margin: 15px auto 0 auto; }
+        margin: 15px auto 60px auto; }
         .section-4 .fundraise-btn .btn-text-container {
-          padding: 12.5px 55px; } }
+          padding: 20px 40px; } }
 
 .section-4 #donation-form {
   /* CUSTOM RADIO & CHECKBOXES http://stackoverflow.com/a/17541916/383904 */
@@ -888,9 +932,12 @@
   /* RADIO & CHECKBOX STYLES */
   /* CHECKBOX OVERWRITE STYLES */
   /* CHECKBOX */ }
-  .section-4 #donation-form .donate-inquiry {
+  @media screen and (max-width: 767px) {
+    .section-4 #donation-form .donate-input-container {
+      text-align: center; } }
+  .section-4 #donation-form .donate-input-container .donate-inquiry {
     width: 100%; }
-  .section-4 #donation-form .donate-input {
+  .section-4 #donation-form .donate-input-container .donate-input {
     border: 1px solid #777777;
     font-size: 20px;
     height: 50px;
@@ -898,11 +945,45 @@
     max-width: 390px;
     padding-left: 15px;
     width: 100%; }
+    @media screen and (max-width: 767px) {
+      .section-4 #donation-form .donate-input-container .donate-input {
+        max-width: 540px; } }
   .section-4 #donation-form .donation-buttons {
     margin-bottom: 15px;
     width: 100%; }
+    @media screen and (max-width: 767px) {
+      .section-4 #donation-form .donation-buttons {
+        margin-bottom: 25px;
+        text-align: left;
+        max-width: 540px; } }
     .section-4 #donation-form .donation-buttons .donation-options {
       display: none; }
+  @media screen and (max-width: 767px) {
+    .section-4 #donation-form .time-options-container {
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 540px;
+      width: 100%; } }
+  @media screen and (max-width: 767px) {
+    .section-4 #donation-form .time-options-container .time-option {
+      text-align: left; } }
+  @media screen and (max-width: 767px) {
+    .section-4 #donation-form .tribute-container {
+      margin-left: auto;
+      margin-right: auto;
+      width: 100%;
+      max-width: 540px;
+      text-align: left; } }
+  .section-4 #donation-form .tribute-container .tribute-name-ckb {
+    margin-bottom: 10px;
+    /*margin-right: 10px;*/ }
+  .section-4 #donation-form .tribute-container .tribute-name-label {
+    width: 100%;
+    max-width: 240px; }
+    .section-4 #donation-form .tribute-container .tribute-name-label #tribute-name {
+      border-radius: 0px;
+      font-family: "Sofia-Pro";
+      font-size: 16px; }
   .section-4 #donation-form label {
     font-family: "Sofia-Pro";
     font-size: 1.2vw;
@@ -935,10 +1016,13 @@
     background: #e51937;
     color: #fff; }
   .section-4 #donation-form .rad {
-    margin-right: 45px; }
+    /*margin-right: 45px;*/ }
   .section-4 #donation-form .rad > i {
     margin-top: -3px;
     margin-right: 10px; }
+    @media screen and (max-width: 767px) {
+      .section-4 #donation-form .rad > i {
+        margin-right: 0; } }
   .section-4 #donation-form .rad,
   .section-4 #donation-form .ckb {
     cursor: pointer;
@@ -992,9 +1076,13 @@
     border-radius: 0;
     font-family: "Trade-Gothic-bd20";
     opacity: .9;
-    padding: 5px;
+    padding: 2px;
     width: 100%;
     max-width: 104px; }
+    @media screen and (max-width: 767px) {
+      .section-4 #donation-form .donation-submit-btn {
+        font-size: 16px;
+        max-width: 540px; } }
     .section-4 #donation-form .donation-submit-btn .submit-btn-container {
       background: #e51937;
       color: #ffffff;
@@ -1002,6 +1090,21 @@
       padding: 10px 25px;
       text-transform: uppercase;
       width: 100%; }
+      @media screen and (max-width: 767px) {
+        .section-4 #donation-form .donation-submit-btn .submit-btn-container {
+          letter-spacing: 2px; } }
+
+.section-4 .learn-more {
+  font-family: "Sofia-Pro";
+  font-size: 13px;
+  margin-top: 30px; }
+  @media screen and (max-width: 767px) {
+    .section-4 .learn-more {
+      font-size: 14px;
+      margin-top: 10px; } }
+  .section-4 .learn-more a, .section-4 .learn-more a:hover {
+    color: #e51937;
+    text-decoration: underline; }
 
 html {
   /*overflow-y: scroll;*/ }
@@ -1033,3 +1136,9 @@ body {
     .brand-text {
       left: 75px;
       font-size: 8px; } }
+
+.p-0 {
+  padding: 0; }
+
+.p-r-0 {
+  padding-right: 0; }

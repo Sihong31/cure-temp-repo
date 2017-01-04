@@ -73,7 +73,7 @@
 	
 	ReactDOM.render(React.createElement(_tiles2.default, null), document.getElementById('react-tile'));
 	
-	ReactDOM.render(React.createElement(_donations2.default, null), document.getElementById('react-selections'));
+	ReactDOM.render(React.createElement(_donations2.default, null), document.getElementById('react-donations'));
 
 /***/ },
 /* 1 */
@@ -5635,7 +5635,7 @@
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 	
 	var React = __webpack_require__(/*! react */ 3);
-	var selectionData = __webpack_require__(/*! ../../data/selections.json */ 45);
+	var donationData = __webpack_require__(/*! ../../data/donations.json */ 196);
 	
 	var Donation = function (_React$Component) {
 		_inherits(Donation, _React$Component);
@@ -5657,7 +5657,7 @@
 				_this.setState({ speakActive: true, fundraiseActive: false, donateActive: false });
 			};
 	
-			_this.state = { selections: [], donateActive: true, fundraiseActive: false, speakActive: false };
+			_this.state = { donations: [], donateActive: true, fundraiseActive: false, speakActive: false };
 			return _this;
 		}
 	
@@ -5665,7 +5665,7 @@
 			key: 'componentDidMount',
 			value: function componentDidMount() {
 				this.setState({
-					selections: selectionData.selections
+					donations: donationData.donations
 				});
 			}
 		}, {
@@ -5686,12 +5686,12 @@
 					null,
 					React.createElement(
 						'p',
-						null,
+						{ className: 'fundraise-copy' },
 						'CURE Crew members are making a difference all over the United States by hosting bake sales, swim-a-thons, golf outings, concerts, and much more.\xA0By using your own talents, you can lead an event that raises awareness and important funds for\xA0research in epilepsy.'
 					),
 					React.createElement(
 						'a',
-						{ href: '#', className: 'hidden-xs btn cure-btn fundraise-btn', role: 'button' },
+						{ href: '#', className: 'btn cure-btn fundraise-btn', role: 'button' },
 						React.createElement(
 							'div',
 							{ className: 'btn-text-container' },
@@ -5708,7 +5708,7 @@
 					null,
 					React.createElement(
 						'p',
-						null,
+						{ className: 'speak-up-copy' },
 						'Help us spread the word about epilepsy and the need for a cure.'
 					),
 					React.createElement(
@@ -5724,21 +5724,37 @@
 						'div',
 						{ className: 'social-icons' },
 						React.createElement(
-							'a',
-							{ href: '#' },
+							'div',
+							{ className: 'row' },
 							React.createElement(
-								'span',
-								{ id: 'social-icon-fb' },
-								'share on facebook'
-							)
-						),
-						React.createElement(
-							'a',
-							{ href: '#' },
-							React.createElement(
-								'span',
-								{ id: 'social-icon-twitter' },
-								'share on twitter'
+								'div',
+								{ className: 'col-xs-12 p-0' },
+								React.createElement(
+									'div',
+									{ className: 'col-xs-12 col-md-6' },
+									React.createElement(
+										'a',
+										{ href: '#' },
+										React.createElement(
+											'span',
+											{ id: 'social-icon-fb' },
+											'share on facebook'
+										)
+									)
+								),
+								React.createElement(
+									'div',
+									{ className: 'col-xs-12 col-md-6' },
+									React.createElement(
+										'a',
+										{ href: '#' },
+										React.createElement(
+											'span',
+											{ id: 'social-icon-twitter' },
+											'share on twitter'
+										)
+									)
+								)
 							)
 						)
 					)
@@ -5788,41 +5804,65 @@
 							{ className: 'right-content-container' },
 							React.createElement(
 								'div',
-								{ className: 'selections' },
+								{ className: 'row' },
 								React.createElement(
-									'h3',
-									null,
-									'You can'
-								),
-								React.createElement(
-									'h1',
-									{ onClick: this.donateOnClick, className: 'selection header-active', id: 'selection-donate' },
+									'div',
+									{ className: 'col-xs-12 p-0' },
 									React.createElement(
-										'span',
-										null,
-										'donate'
+										'h3',
+										{ className: 'selections-header' },
+										'You can'
 									)
-								),
-								React.createElement(
-									'h1',
-									{ onClick: this.fundraiseOnClick, className: 'selection', id: 'selection-fundraise' },
-									React.createElement(
-										'span',
-										null,
-										'fundraise'
-									)
-								),
-								React.createElement(
-									'h1',
-									{ onClick: this.speakOnClick, className: 'selection', id: 'selection-speak' },
-									React.createElement(
-										'span',
-										null,
-										'speak up'
-									)
-								),
-								React.createElement('hr', null)
+								)
 							),
+							React.createElement(
+								'div',
+								{ className: 'row' },
+								React.createElement(
+									'div',
+									{ className: 'col-xs-12 p-0 selections' },
+									React.createElement(
+										'div',
+										{ className: 'col-xs-4 col-sm-12 selection-container selection-active' },
+										React.createElement(
+											'h1',
+											{ onClick: this.donateOnClick, className: 'selection', id: 'selection-donate' },
+											React.createElement(
+												'span',
+												null,
+												'donate'
+											)
+										)
+									),
+									React.createElement(
+										'div',
+										{ className: 'col-xs-4 col-sm-12 selection-container' },
+										React.createElement(
+											'h1',
+											{ onClick: this.fundraiseOnClick, className: 'selection', id: 'selection-fundraise' },
+											React.createElement(
+												'span',
+												null,
+												'fundraise'
+											)
+										)
+									),
+									React.createElement(
+										'div',
+										{ className: 'col-xs-4 col-sm-12 selection-container' },
+										React.createElement(
+											'h1',
+											{ onClick: this.speakOnClick, className: 'selection', id: 'selection-speak' },
+											React.createElement(
+												'span',
+												null,
+												'speak up'
+											)
+										)
+									)
+								)
+							),
+							React.createElement('hr', { className: 'hidden-xs' }),
 							React.createElement(
 								'div',
 								null,
@@ -5931,10 +5971,10 @@
 						{ id: 'donation-form', onSubmit: this.handleFormSubmit },
 						React.createElement(
 							'div',
-							{ className: 'form-group' },
+							{ className: 'form-group donate-input-container' },
 							React.createElement(
 								'label',
-								{ className: 'donate-inquiry', htmlFor: 'donation' },
+								{ className: 'donate-inquiry hidden-xs', htmlFor: 'donation' },
 								'What would you like to donate'
 							),
 							React.createElement('input', (_React$createElement = { type: 'text', className: 'form-control' }, _defineProperty(_React$createElement, 'className', 'donate-input'), _defineProperty(_React$createElement, 'id', 'donation'), _defineProperty(_React$createElement, 'placeholder', '$25.00/month'), _React$createElement))
@@ -5943,21 +5983,37 @@
 						React.createElement(_timeOptions2.default, null),
 						React.createElement(
 							'div',
-							{ className: 'form-group' },
+							{ className: 'form-group tribute-container' },
 							React.createElement(
 								'div',
 								{ className: 'form-check' },
 								React.createElement(
-									'label',
-									{ className: 'form-check-label ckb' },
-									React.createElement('input', { type: 'checkbox', className: 'form-check-input' }),
-									React.createElement('i', null),
-									' Give in honor of'
-								),
-								React.createElement(
-									'label',
-									{ htmlFor: 'tribute-name' },
-									React.createElement('input', { type: 'text', className: 'form-control', id: 'tribute-name', placeholder: 'Tribute Full Name' })
+									'div',
+									{ className: 'row' },
+									React.createElement(
+										'div',
+										{ className: 'col-xs-12 p-0' },
+										React.createElement(
+											'div',
+											{ className: 'col-xs-12 col-md-5 p-r-0' },
+											React.createElement(
+												'label',
+												{ className: 'form-check-label ckb tribute-name-ckb' },
+												React.createElement('input', { type: 'checkbox', className: 'form-check-input' }),
+												React.createElement('i', null),
+												' Give in honor of'
+											)
+										),
+										React.createElement(
+											'div',
+											{ className: 'col-xs-12 col-md-7 p-r-0' },
+											React.createElement(
+												'label',
+												{ htmlFor: 'tribute-name', className: 'tribute-name-label' },
+												React.createElement('input', { type: 'text', className: 'form-control', id: 'tribute-name', placeholder: 'Tribute Full Name' })
+											)
+										)
+									)
 								)
 							)
 						),
@@ -6043,22 +6099,42 @@
 					'div',
 					{ className: 'btn-group donation-buttons' },
 					React.createElement(
-						'label',
-						{ className: 'btn btn-primary active' },
-						React.createElement('input', { type: 'checkbox', name: 'options', className: 'donation-options', id: 'donation-option-1', value: 'option1', checked: this.state.selectedDonationOption === "option1", onChange: this.handleDonationOptionChange }),
-						'$25'
-					),
-					React.createElement(
-						'label',
-						{ className: 'btn btn-primary' },
-						React.createElement('input', { type: 'checkbox', name: 'options', className: 'donation-options', id: 'donation-option-2', value: 'option2', checked: this.state.selectedDonationOption === "option2", onChange: this.handleDonationOptionChange }),
-						'$50'
-					),
-					React.createElement(
-						'label',
-						{ className: 'btn btn-primary' },
-						React.createElement('input', { type: 'checkbox', name: 'options', className: 'donation-options', id: 'donation-option-3', value: 'option3', checked: this.state.selectedDonationOption === "option3", onChange: this.handleDonationOptionChange }),
-						'$100'
+						'div',
+						{ className: 'row' },
+						React.createElement(
+							'div',
+							{ className: 'col-xs-12 p-0' },
+							React.createElement(
+								'div',
+								{ className: 'col-xs-4' },
+								React.createElement(
+									'label',
+									{ className: 'btn btn-primary active' },
+									React.createElement('input', { type: 'checkbox', name: 'options', className: 'donation-options', id: 'donation-option-1', value: 'option1', checked: this.state.selectedDonationOption === "option1", onChange: this.handleDonationOptionChange }),
+									'$25'
+								)
+							),
+							React.createElement(
+								'div',
+								{ className: 'col-xs-4' },
+								React.createElement(
+									'label',
+									{ className: 'btn btn-primary' },
+									React.createElement('input', { type: 'checkbox', name: 'options', className: 'donation-options', id: 'donation-option-2', value: 'option2', checked: this.state.selectedDonationOption === "option2", onChange: this.handleDonationOptionChange }),
+									'$50'
+								)
+							),
+							React.createElement(
+								'div',
+								{ className: 'col-xs-4' },
+								React.createElement(
+									'label',
+									{ className: 'btn btn-primary' },
+									React.createElement('input', { type: 'checkbox', name: 'options', className: 'donation-options', id: 'donation-option-3', value: 'option3', checked: this.state.selectedDonationOption === "option3", onChange: this.handleDonationOptionChange }),
+									'$100'
+								)
+							)
+						)
 					)
 				);
 			}
@@ -6115,23 +6191,39 @@
 			value: function render() {
 				return React.createElement(
 					'div',
-					{ className: 'form-group' },
+					{ className: 'form-group time-options-container' },
 					React.createElement(
 						'div',
-						{ className: 'form-check time-options-container' },
+						{ className: 'form-check' },
 						React.createElement(
-							'label',
-							{ className: 'form-check-label rad', htmlFor: 'time-option-1' },
-							React.createElement('input', { type: 'radio', className: 'form-check-input', name: 'options', id: 'time-option-1', value: 'option1', checked: this.state.selectedTimeOption === "option1", onChange: this.handleTimeOptionChange }),
-							React.createElement('i', null),
-							' Monthly'
-						),
-						React.createElement(
-							'label',
-							{ className: 'form-check-label rad', htmlFor: 'time-option-2' },
-							React.createElement('input', { type: 'radio', className: 'form-check-input', name: 'options', id: 'time-option-2', value: 'option2', checked: this.state.selectedTimeOption === "option2", onChange: this.handleTimeOptionChange }),
-							React.createElement('i', null),
-							' One Time'
+							'div',
+							{ className: 'row' },
+							React.createElement(
+								'div',
+								{ className: 'col-xs-12 p-0' },
+								React.createElement(
+									'div',
+									{ className: 'col-xs-6 p-r-0 time-option' },
+									React.createElement(
+										'label',
+										{ className: 'form-check-label rad', htmlFor: 'time-option-1' },
+										React.createElement('input', { type: 'radio', className: 'form-check-input', name: 'options', id: 'time-option-1', value: 'option1', checked: this.state.selectedTimeOption === "option1", onChange: this.handleTimeOptionChange }),
+										React.createElement('i', null),
+										' Monthly'
+									)
+								),
+								React.createElement(
+									'div',
+									{ className: 'col-xs-6 p-r-0 time-option' },
+									React.createElement(
+										'label',
+										{ className: 'form-check-label rad', htmlFor: 'time-option-2' },
+										React.createElement('input', { type: 'radio', className: 'form-check-input', name: 'options', id: 'time-option-2', value: 'option2', checked: this.state.selectedTimeOption === "option2", onChange: this.handleTimeOptionChange }),
+										React.createElement('i', null),
+										' One Time'
+									)
+								)
+							)
 						)
 					)
 				);
@@ -6144,33 +6236,7 @@
 	exports.default = TimeOptions;
 
 /***/ },
-/* 45 */
-/*!******************************!*\
-  !*** ./data/selections.json ***!
-  \******************************/
-/***/ function(module, exports) {
-
-	module.exports = {
-		"selections": [
-			{
-				"id": 1,
-				"desktopImg": "desktop-selection-1.jpg",
-				"mobileImg:": "mobile-selection-1.jpg"
-			},
-			{
-				"id": 2,
-				"desktopImg": "desktop-selection-2.jpg",
-				"mobileImg:": "mobile-selection-2.jpg"
-			},
-			{
-				"id": 3,
-				"desktopImg": "desktop-selection-3.jpg",
-				"mobileImg:": "mobile-selection-3.jpg"
-			}
-		]
-	};
-
-/***/ },
+/* 45 */,
 /* 46 */
 /*!******************************!*\
   !*** ./~/react-dom/index.js ***!
@@ -24473,10 +24539,10 @@
 		constructor: DonateSection,
 	
 		activateHeader: function activateHeader() {
-			var headers = ".section-4 h1.selection";
+			var headers = ".section-4 .selection-container";
 			$("body").on("click", headers, function () {
-				$(this).addClass("header-active");
-				$(this).siblings("h1").removeClass("header-active");
+				$(this).addClass("selection-active");
+				$(this).siblings().removeClass("selection-active");
 			});
 		},
 	
@@ -24484,7 +24550,7 @@
 			var donateBtns = ".section-4 .donation-buttons label";
 			$("body").on("click", donateBtns, function () {
 				$(this).addClass("active");
-				$(this).siblings("label").removeClass("active");
+				$(this).parent().siblings().children("label").removeClass("active");
 			});
 		},
 	
@@ -24514,6 +24580,33 @@
 	document.addEventListener("DOMContentLoaded", function () {
 		init();
 	}, false);
+
+/***/ },
+/* 196 */
+/*!*****************************!*\
+  !*** ./data/donations.json ***!
+  \*****************************/
+/***/ function(module, exports) {
+
+	module.exports = {
+		"donations": [
+			{
+				"id": 1,
+				"desktopImg": "desktop-selection-1.jpg",
+				"mobileImg:": "mobile-selection-1.jpg"
+			},
+			{
+				"id": 2,
+				"desktopImg": "desktop-selection-2.jpg",
+				"mobileImg:": "mobile-selection-2.jpg"
+			},
+			{
+				"id": 3,
+				"desktopImg": "desktop-selection-3.jpg",
+				"mobileImg:": "mobile-selection-3.jpg"
+			}
+		]
+	};
 
 /***/ }
 /******/ ]);

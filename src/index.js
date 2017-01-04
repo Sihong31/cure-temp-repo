@@ -20,5 +20,5 @@ ReactDOM.render(
 
 ReactDOM.render(
 	<Donation />,
-	document.getElementById('react-selections')
+	document.getElementById('react-donations')
 )
