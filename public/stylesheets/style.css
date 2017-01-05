@@ -22,6 +22,12 @@
   font-family: 'Sofia-Pro-Bold';
   src: url("/fonts/sofia-pro/sofia-pro-bold.otf") format("opentype"); }
 
+.section-1 {
+  min-height: 1800px; }
+  @media screen and (max-width: 767px) {
+    .section-1 {
+      min-height: 1225px; } }
+
 .carousel, .carousel-inner {
   min-height: 1800px; }
   @media screen and (max-width: 767px) {
@@ -52,7 +58,7 @@
         max-height: 550px; } }
     .carousel .carousel-inner .upper-slide-container img {
       position: absolute;
-      bottom: 0;
+      top: 0;
       left: 50%;
       width: 100%;
       min-width: 914px;
@@ -60,6 +66,7 @@
       transform: translate(-50%, 0); }
       @media screen and (max-width: 767px) {
         .carousel .carousel-inner .upper-slide-container img {
+          top: 25%;
           width: 100%;
           min-width: 305px;
           max-width: 305px; } }
@@ -418,7 +425,7 @@
   .cure-btn .btn-text-container {
     background: #e51937;
     opacity: .9;
-    padding: 15px 20px; }
+    padding: 12px 20px; }
 
 .cure-btn:hover {
   color: #ffffff; }
@@ -440,7 +447,7 @@
 
 .section-2 {
   /*height: 100vh;*/
-  max-height: 1220px;
+  /*max-height: 1220px;*/
   position: relative; }
   @media screen and (max-width: 767px) {
     .section-2 {
@@ -482,17 +489,17 @@
         transform: translateY(0); } }
   .section-2 .right-content-container {
     position: absolute;
-    padding: 0 40px;
+    padding: 0;
     /*position: relative;*/
     top: 50%;
-    left: 0;
+    left: 50%;
     /*left: 48%;*/
     /*transform: translate(-48%, -50%);*/
-    transform: translate(0, 50%); }
-    @media screen and (min-width: 768px) and (max-width: 1200px) {
+    transform: translate(-50%, 15%); }
+    @media screen and (min-width: 768px) and (max-width: 1080px) {
       .section-2 .right-content-container {
-        padding: 0 25px;
-        transform: translate(0, 15%); } }
+        left: 25%;
+        transform: translate(-25%, 10%); } }
     @media screen and (max-width: 767px) {
       .section-2 .right-content-container {
         position: relative;
@@ -505,11 +512,11 @@
     font-family: "Bebas-Neue-Bold";
     margin: 0;
     text-transform: uppercase;
-    font-size: 6vw; }
-    @media (max-width: 666.66667px) {
+    font-size: 5vw; }
+    @media (max-width: 800px) {
       .section-2 h1 {
         font-size: 40px; } }
-    @media (min-width: 2666.66667px) {
+    @media (min-width: 3200px) {
       .section-2 h1 {
         font-size: 160px; } }
     @media screen and (max-width: 767px) {
@@ -564,7 +571,7 @@
 
 .section-3 {
   /*height: 100vh;*/
-  max-height: 1220px;
+  /*max-height: 1220px;*/
   position: relative; }
   @media screen and (max-width: 767px) {
     .section-3 {
@@ -651,17 +658,14 @@
           .section-3 .left-content-container .tile-container a {
             font-size: 18px; } }
   .section-3 .right-content-container {
-    padding: 0 100px;
     position: absolute;
-    transform: translate(0%, 100%);
-    /*		position: absolute;
-	    top: 50%;
-	    left: 48%;
-	    transform: translate(-48%, -50%);*/ }
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 50%); }
     @media screen and (min-width: 768px) and (max-width: 1080px) {
       .section-3 .right-content-container {
-        padding: 0 25px;
-        transform: translate(0%, 50%); } }
+        left: 25%;
+        transform: translate(-25%, 30%); } }
     @media screen and (max-width: 767px) {
       .section-3 .right-content-container {
         position: relative;
@@ -733,7 +737,7 @@
 
 .section-4 {
   /*height: 100vh;*/
-  max-height: 1220px;
+  /*max-height: 1220px;*/
   position: relative; }
   @media screen and (max-width: 767px) {
     .section-4 {
@@ -774,16 +778,17 @@
         top: 0;
         transform: translateY(0); } }
   .section-4 .right-content-container {
-    /*		position: absolute;
-	    top: 50%;
-	    left: 48%;
-	    transform: translate(-48%, -50%);*/
-    padding: 0 100px;
     position: absolute;
-    transform: translate(2%, 5%); }
+    /*top: 50%;*/
+    left: 50%;
+    transform: translate(-50%, 5%); }
     @media screen and (min-width: 1441px) {
       .section-4 .right-content-container {
-        transform: translate(2%, 20%); } }
+        transform: translate(-50%, 15%); } }
+    @media screen and (min-width: 768px) and (max-width: 1080px) {
+      .section-4 .right-content-container {
+        left: 30%;
+        transform: translate(-30%, 5%); } }
     @media screen and (max-width: 767px) {
       .section-4 .right-content-container {
         position: relative;
@@ -985,7 +990,7 @@
         letter-spacing: 2px;
         margin: 15px auto 60px auto; }
         .section-4 .fundraise-btn .btn-text-container {
-          padding: 20px 40px; } }
+          padding: 12px 40px; } }
 
 .section-4 #donation-form {
   /* CUSTOM RADIO & CHECKBOXES http://stackoverflow.com/a/17541916/383904 */

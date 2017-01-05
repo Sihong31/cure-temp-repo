@@ -1,6 +1,6 @@
 .section-3 {
 	/*height: 100vh;*/
-	max-height: 1220px;
+	/*max-height: 1220px;*/
 	position: relative;
 	@media screen and (max-width: 767px) {
 		    /*max-height: 875px;*/
@@ -84,17 +84,14 @@
 		}
 	}
 	.right-content-container {
-		padding: 0 100px;
 		position: absolute;
-		transform: translate(0%, 100%);
-		@media screen and (min-width: 768px) and (max-width: 1080px) {
-			padding: 0 25px;
-			transform: translate(0%, 50%);
-		}
-/*		position: absolute;
 	    top: 50%;
-	    left: 48%;
-	    transform: translate(-48%, -50%);*/
+	    left: 50%;
+	    transform: translate(-50%, 50%);
+		@media screen and (min-width: 768px) and (max-width: 1080px) {
+			left: 25%;
+			transform: translate(-25%, 30%);
+		}
 	    @media screen and (max-width: 767px) {
 	    	position: relative;
 	    	top: 0;

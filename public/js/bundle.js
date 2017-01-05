@@ -66,8 +66,8 @@
 	var React = __webpack_require__(/*! react */ 3);
 	var ReactDOM = __webpack_require__(/*! react-dom */ 46);
 	var main = __webpack_require__(/*! ./main */ 192);
-	var tiles = __webpack_require__(/*! ./tiles */ 194);
-	var donate = __webpack_require__(/*! ./donate */ 195);
+	var tiles = __webpack_require__(/*! ./tiles */ 193);
+	var donate = __webpack_require__(/*! ./donate */ 194);
 	
 	ReactDOM.render(React.createElement(_carousel2.default, null), document.getElementById('react-carousel-container'));
 	
@@ -4481,7 +4481,7 @@
   \*******************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	var __WEBPACK_AMD_DEFINE_RESULT__;var require;/* WEBPACK VAR INJECTION */(function(process, global, module) {'use strict';
+	var require;var __WEBPACK_AMD_DEFINE_RESULT__;/* WEBPACK VAR INJECTION */(function(process, global, module) {'use strict';
 	
 	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 	
@@ -5635,7 +5635,7 @@
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 	
 	var React = __webpack_require__(/*! react */ 3);
-	var donationData = __webpack_require__(/*! ../../data/donations.json */ 196);
+	var donationData = __webpack_require__(/*! ../../data/donations.json */ 45);
 	
 	var Donation = function (_React$Component) {
 		_inherits(Donation, _React$Component);
@@ -5645,19 +5645,23 @@
 	
 			var _this = _possibleConstructorReturn(this, (Donation.__proto__ || Object.getPrototypeOf(Donation)).call(this, props));
 	
+			_this.headerIsActive = function (value) {
+				return 'col-xs-4 col-sm-12 selection-container ' + (value === _this.state.headerActiveValue ? 'selection-active' : '');
+			};
+	
 			_this.donateOnClick = function () {
-				_this.setState({ donateActive: true, fundraiseActive: false, speakActive: false });
+				_this.setState({ donateActive: true, fundraiseActive: false, speakActive: false, headerActiveValue: 1 });
 			};
 	
 			_this.fundraiseOnClick = function () {
-				_this.setState({ fundraiseActive: true, donateActive: false, speakActive: false });
+				_this.setState({ fundraiseActive: true, donateActive: false, speakActive: false, headerActiveValue: 2 });
 			};
 	
 			_this.speakOnClick = function () {
-				_this.setState({ speakActive: true, fundraiseActive: false, donateActive: false });
+				_this.setState({ speakActive: true, fundraiseActive: false, donateActive: false, headerActiveValue: 3 });
 			};
 	
-			_this.state = { donations: [], donateActive: true, fundraiseActive: false, speakActive: false };
+			_this.state = { donations: [], donateActive: true, fundraiseActive: false, speakActive: false, headerActiveValue: 1 };
 			return _this;
 		}
 	
@@ -5823,7 +5827,7 @@
 									{ className: 'col-xs-12 p-0 selections' },
 									React.createElement(
 										'div',
-										{ onClick: this.donateOnClick, className: 'col-xs-4 col-sm-12 selection-container selection-active' },
+										{ onClick: this.donateOnClick, className: this.headerIsActive(1) },
 										React.createElement(
 											'h1',
 											{ className: 'selection', id: 'selection-donate' },
@@ -5836,7 +5840,7 @@
 									),
 									React.createElement(
 										'div',
-										{ onClick: this.fundraiseOnClick, className: 'col-xs-4 col-sm-12 selection-container' },
+										{ onClick: this.fundraiseOnClick, className: this.headerIsActive(2) },
 										React.createElement(
 											'h1',
 											{ className: 'selection', id: 'selection-fundraise' },
@@ -5849,7 +5853,7 @@
 									),
 									React.createElement(
 										'div',
-										{ onClick: this.speakOnClick, className: 'col-xs-4 col-sm-12 selection-container' },
+										{ onClick: this.speakOnClick, className: this.headerIsActive(3) },
 										React.createElement(
 											'h1',
 											{ className: 'selection', id: 'selection-speak' },
@@ -6082,13 +6086,18 @@
 	
 			var _this = _possibleConstructorReturn(this, (DonationOptions.__proto__ || Object.getPrototypeOf(DonationOptions)).call(this, props));
 	
+			_this.btnIsActive = function (value) {
+				return 'btn btn-primary ' + (value === _this.state.btnActiveID ? 'active' : '');
+			};
+	
 			_this.handleDonationOptionChange = function (changeEvent) {
 				_this.setState({
-					selectedDonationOption: changeEvent.target.value
+					selectedDonationOption: changeEvent.target.value,
+					btnActiveID: changeEvent.target.id
 				}, console.log(changeEvent.target.value));
 			};
 	
-			_this.state = { selectedDonationOption: 'option1' };
+			_this.state = { selectedDonationOption: 'option1', btnActiveID: "donation-option-1" };
 			return _this;
 		}
 	
@@ -6109,7 +6118,7 @@
 								{ className: 'col-xs-4' },
 								React.createElement(
 									'label',
-									{ className: 'btn btn-primary active' },
+									{ className: this.btnIsActive("donation-option-1") },
 									React.createElement('input', { type: 'checkbox', name: 'options', className: 'donation-options', id: 'donation-option-1', value: 'option1', checked: this.state.selectedDonationOption === "option1", onChange: this.handleDonationOptionChange }),
 									'$25'
 								)
@@ -6119,7 +6128,7 @@
 								{ className: 'col-xs-4' },
 								React.createElement(
 									'label',
-									{ className: 'btn btn-primary' },
+									{ className: this.btnIsActive("donation-option-2") },
 									React.createElement('input', { type: 'checkbox', name: 'options', className: 'donation-options', id: 'donation-option-2', value: 'option2', checked: this.state.selectedDonationOption === "option2", onChange: this.handleDonationOptionChange }),
 									'$50'
 								)
@@ -6129,7 +6138,7 @@
 								{ className: 'col-xs-4' },
 								React.createElement(
 									'label',
-									{ className: 'btn btn-primary' },
+									{ className: this.btnIsActive("donation-option-3") },
 									React.createElement('input', { type: 'checkbox', name: 'options', className: 'donation-options', id: 'donation-option-3', value: 'option3', checked: this.state.selectedDonationOption === "option3", onChange: this.handleDonationOptionChange }),
 									'$100'
 								)
@@ -6236,7 +6245,33 @@
 	exports.default = TimeOptions;
 
 /***/ },
-/* 45 */,
+/* 45 */
+/*!*****************************!*\
+  !*** ./data/donations.json ***!
+  \*****************************/
+/***/ function(module, exports) {
+
+	module.exports = {
+		"donations": [
+			{
+				"id": 1,
+				"desktopImg": "desktop-selection-1.jpg",
+				"mobileImg:": "mobile-selection-1.jpg"
+			},
+			{
+				"id": 2,
+				"desktopImg": "desktop-selection-2.jpg",
+				"mobileImg:": "mobile-selection-2.jpg"
+			},
+			{
+				"id": 3,
+				"desktopImg": "desktop-selection-3.jpg",
+				"mobileImg:": "mobile-selection-3.jpg"
+			}
+		]
+	};
+
+/***/ },
 /* 46 */
 /*!******************************!*\
   !*** ./~/react-dom/index.js ***!
@@ -24074,15 +24109,13 @@
 
 	'use strict';
 	
-	var easeScroll = __webpack_require__(/*! ./jquery.easeScroll.js */ 193);
+	var easeScroll = __webpack_require__(/*! ./jquery.easeScroll.js */ 195);
 	$('.carousel').carousel({});
 	
 	function Parallax() {
-		this.mainImage = $(".main-image");
-		this.lowerContainer = $(".lower-slide-container");
-	
 		this.mainImageScroll();
 		this.mainImageResize();
+		this.mainImageOnPageLoad();
 		this.easeScrolling();
 		this.fadeAnimation();
 	}
@@ -24090,62 +24123,68 @@
 	Parallax.prototype = {
 		constructor: Parallax,
 	
-		mainImageScroll: function mainImageScroll() {
-			var mainImage = this.mainImage;
-			var lowerContainer = this.lowerContainer;
-			$(window).scroll(function (e) {
-				var lowerContainerHeight = lowerContainer.height();
-				var topChange = 100 / lowerContainerHeight;
-				var leftChange = -(29 / lowerContainerHeight);
-				var checkWinWidth = window.innerWidth;
-				var scrolled = $(window).scrollTop();
+		scrollConditions: function scrollConditions() {
+			var mainImage = $(".main-image");
+			var lowerContainer = $(".lower-slide-container");
+			var lowerContainerHeight = lowerContainer.height();
+			var topChange = 100 / lowerContainerHeight;
+			var leftChange = -(29 / lowerContainerHeight);
+			var checkWinWidth = window.innerWidth;
+			var scrolled = $(window).scrollTop();
 	
-				if (scrolled <= lowerContainerHeight) {
-					mainImage.css("top", scrolled * topChange + "%");
+			if (scrolled <= lowerContainerHeight) {
+				mainImage.css("top", scrolled * topChange + "%");
 	
-					if (checkWinWidth < 768) {
-						mainImage.css("top", 25 + scrolled * topChange + "%");
-					}
-	
-					if (checkWinWidth > 1080) {
-						mainImage.css("left", 50 + scrolled * leftChange + "%");
-					} else {
-						mainImage.css("left", 50 + "%");
-						if (parseInt(mainImage[0].style.top) > 50 && checkWinWidth < 1081) {
-							mainImage.css("opacity", .4);
-						} else {
-							mainImage.css("opacity", 1);
-						}
-					};
+				if (checkWinWidth < 768) {
+					mainImage.css("top", 25 + scrolled * topChange + "%");
 				}
+	
+				if (checkWinWidth > 1080) {
+					mainImage.css("left", 50 + scrolled * leftChange + "%");
+					mainImage.css("opacity", 1);
+				} else {
+					mainImage.css("left", 50 + "%");
+					if (parseInt(mainImage[0].style.top) > 50 && checkWinWidth < 1081) {
+						mainImage.css("opacity", .4);
+					} else {
+						mainImage.css("opacity", 1);
+					}
+				};
+			}
+			if (scrolled > lowerContainerHeight) {
+				mainImage.css("top", 98.13 + "%");
+				mainImage.css("left", 21.6767 + "%");
+				if (checkWinWidth < 768) {
+					mainImage.css("top", 125 + "%");
+				}
+				if (checkWinWidth < 1081) {
+					mainImage.css("left", 50 + "%");
+					mainImage.css("opacity", .4);
+				}
+				if (checkWinWidth > 1080) {
+					mainImage.css("opacity", 1);
+				}
+			}
+		},
+	
+		mainImageScroll: function mainImageScroll() {
+			var scrollConditions = this.scrollConditions;
+			$(window).scroll(function (e) {
+				scrollConditions();
+			});
+		},
+	
+		mainImageOnPageLoad: function mainImageOnPageLoad() {
+			var scrollConditions = this.scrollConditions;
+			$(window).load(function () {
+				scrollConditions();
 			});
 		},
 	
 		mainImageResize: function mainImageResize() {
-			var mainImage = this.mainImage;
-			var lowerContainer = this.lowerContainer;
+			var scrollConditions = this.scrollConditions;
 			$(window).resize(function () {
-				var lowerContainerHeight = lowerContainer.height();
-				var topChange = 100 / lowerContainerHeight;
-				var leftChange = -(29 / lowerContainerHeight);
-				var checkWinWidth = window.innerWidth;
-				var scrolled = $(window).scrollTop();
-				if (checkWinWidth < 768) {
-					mainImage.css("top", 25 + scrolled * topChange + "%");
-				}
-				if (checkWinWidth > 767) {
-					mainImage.css("top", scrolled * topChange + "%");
-					mainImage.css("left", 50 + scrolled * leftChange + "%");
-					mainImage.css("opacity", 1);
-				}
-				if (checkWinWidth > 767 && checkWinWidth < 1081) {
-					mainImage.css("left", 50 + "%");
-				}
-				if (parseInt(mainImage[0].style.top) > 50 && checkWinWidth < 1081) {
-					mainImage.css("opacity", .4);
-				} else {
-					mainImage.css("opacity", 1);
-				}
+				scrollConditions();
 			});
 		},
 	
@@ -24155,7 +24194,7 @@
 	
 			html.easeScroll({
 				frameRate: 60,
-				animationTime: 2000,
+				animationTime: 1500,
 				stepSize: 120,
 				pulseAlgorithm: 1,
 				pulseScale: 8,
@@ -24169,24 +24208,33 @@
 			});
 		},
 	
-		fadeAnimation: function fadeAnimation() {
+		fadeConditions: function fadeConditions(lowerSlideRight, lowerContainerOffset, index) {
+			var scrolled = $(window).scrollTop();
+			if (scrolled > lowerContainerOffset / 1.5) {
+				if ($(lowerSlideRight[index]).css("opacity") == 0) {
+					$(lowerSlideRight[index]).fadeTo(500, 1);
+				}
+			}
+			if (scrolled < lowerContainerOffset / 1.5) {
+				if ($(lowerSlideRight[index]).css("opacity") == 1) {
+					$(lowerSlideRight[index]).fadeTo(500, 0);
+				}
+			}
+		},
 	
+		fadeAnimation: function fadeAnimation() {
 			var lowerSlideRight = $(".lower-slide-right");
 			var lowerContainerOffset = $(".lower-slide-container").offset().top;
-			lowerSlideRight.each(function (i) {
+			var fadeConditions = this.fadeConditions;
+			lowerSlideRight.each(function (index) {
 				$(window).scroll(function (e) {
-					var scrolled = $(window).scrollTop();
-					// console.log(scrolled, "******", lowerContainerOffset/2);
-					if (scrolled > lowerContainerOffset / 1.5) {
-						if ($(lowerSlideRight[i]).css("opacity") == 0) {
-							$(lowerSlideRight[i]).fadeTo(500, 1);
-						}
-					}
-					if (scrolled < lowerContainerOffset / 1.5) {
-						if ($(lowerSlideRight[i]).css("opacity") == 1) {
-							$(lowerSlideRight[i]).fadeTo(500, 0);
-						}
-					}
+					fadeConditions(lowerSlideRight, lowerContainerOffset, index);
+				});
+				$(window).resize(function (e) {
+					fadeConditions(lowerSlideRight, lowerContainerOffset, index);
+				});
+				$(window).load(function (e) {
+					fadeConditions(lowerSlideRight, lowerContainerOffset, index);
 				});
 			});
 		}
@@ -24203,6 +24251,118 @@
 
 /***/ },
 /* 193 */
+/*!**********************!*\
+  !*** ./src/tiles.js ***!
+  \**********************/
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	function Tiles() {
+		this.tiles = $(".section-3 .tile-container");
+		this.onHover();
+	}
+	
+	Tiles.prototype = {
+	
+		constructor: Tiles,
+	
+		onHover: function onHover() {
+			$('body').bind('touchstart', function () {});
+			var tiles = this.tiles;
+			var textContainer = $(".section-3 .tile-change");
+	
+			tiles.hover(function () {
+	
+				if ($(this).attr("id") == "tile-1") {
+					textContainer.text("pineapples");
+				}
+				if ($(this).attr("id") == "tile-2") {
+					textContainer.text("coffee beans");
+				}
+				if ($(this).attr("id") == "tile-3") {
+					textContainer.text("pandas");
+				}
+				if ($(this).attr("id") == "tile-4") {
+					textContainer.text("dolphins");
+				}
+			});
+		}
+	
+	};
+	
+	function init() {
+		new Tiles();
+	}
+	
+	document.addEventListener("DOMContentLoaded", function () {
+		init();
+	}, false);
+
+/***/ },
+/* 194 */
+/*!***********************!*\
+  !*** ./src/donate.js ***!
+  \***********************/
+/***/ function(module, exports) {
+
+	"use strict";
+	
+	function DonateSection() {
+		// this.activateHeader();
+		// this.activateBtn();
+		this.updateDonateInfo();
+	}
+	
+	DonateSection.prototype = {
+	
+		constructor: DonateSection,
+	
+		// activateHeader: function() {
+		// 	const headers = ".section-4 .selection-container";
+		// 	$("body").on("click", headers, function() {
+		// 		$(this).addClass("selection-active");
+		// 		$(this).siblings().removeClass("selection-active");
+		// 	});
+		// },
+	
+		// activateBtn: function() {
+		// 	const donateBtns = ".section-4 .donation-buttons label";
+		// 	$("body").on("click", donateBtns, function() {
+		// 		$(this).addClass("active");
+		// 		$(this).parent().siblings().children("label").removeClass("active");
+		// 	});
+		// },
+	
+		updateDonateInfo: function updateDonateInfo() {
+	
+			var donationButtons = "form .donation-buttons input";
+			$("body").on("click", donationButtons, function () {
+				var donatePlaceholder = $("#donation-form #donation");
+				if (this.value === "option1") {
+					donatePlaceholder.attr("placeholder", "$25.00");
+				}
+				if (this.value === "option2") {
+					donatePlaceholder.attr("placeholder", "$50.00");
+				}
+				if (this.value === "option3") {
+					donatePlaceholder.attr("placeholder", "$100.00");
+				}
+			});
+		}
+	
+	};
+	
+	function init() {
+		new DonateSection();
+	}
+	
+	document.addEventListener("DOMContentLoaded", function () {
+		init();
+	}, false);
+
+/***/ },
+/* 195 */
 /*!**********************************!*\
   !*** ./src/jquery.easeScroll.js ***!
   \**********************************/
@@ -24467,145 +24627,6 @@
 	            L = "onmousewheel" in document;
 	        L && K && (u("mousedown", a), u("mousewheel", n), u("load", t));
 	    }();
-	};
-
-/***/ },
-/* 194 */
-/*!**********************!*\
-  !*** ./src/tiles.js ***!
-  \**********************/
-/***/ function(module, exports) {
-
-	'use strict';
-	
-	function Tiles() {
-		this.tiles = $(".section-3 .tile-container");
-		this.onHover();
-	}
-	
-	Tiles.prototype = {
-	
-		constructor: Tiles,
-	
-		onHover: function onHover() {
-			$('body').bind('touchstart', function () {});
-			var tiles = this.tiles;
-			var textContainer = $(".section-3 .tile-change");
-	
-			tiles.hover(function () {
-	
-				if ($(this).attr("id") == "tile-1") {
-					textContainer.text("pineapples");
-				}
-				if ($(this).attr("id") == "tile-2") {
-					textContainer.text("coffee beans");
-				}
-				if ($(this).attr("id") == "tile-3") {
-					textContainer.text("pandas");
-				}
-				if ($(this).attr("id") == "tile-4") {
-					textContainer.text("dolphins");
-				}
-			});
-		}
-	
-	};
-	
-	function init() {
-		new Tiles();
-	}
-	
-	document.addEventListener("DOMContentLoaded", function () {
-		init();
-	}, false);
-
-/***/ },
-/* 195 */
-/*!***********************!*\
-  !*** ./src/donate.js ***!
-  \***********************/
-/***/ function(module, exports) {
-
-	"use strict";
-	
-	function DonateSection() {
-		this.activateHeader();
-		this.activateBtn();
-		this.updateDonateInfo();
-	}
-	
-	DonateSection.prototype = {
-	
-		constructor: DonateSection,
-	
-		activateHeader: function activateHeader() {
-			var headers = ".section-4 .selection-container";
-			$("body").on("click", headers, function () {
-				$(this).addClass("selection-active");
-				$(this).siblings().removeClass("selection-active");
-			});
-		},
-	
-		activateBtn: function activateBtn() {
-			var donateBtns = ".section-4 .donation-buttons label";
-			$("body").on("click", donateBtns, function () {
-				$(this).addClass("active");
-				$(this).parent().siblings().children("label").removeClass("active");
-			});
-		},
-	
-		updateDonateInfo: function updateDonateInfo() {
-	
-			var donationButtons = "form .donation-buttons input";
-			$("body").on("click", donationButtons, function () {
-				var donatePlaceholder = $("#donation-form #donation");
-				if (this.value === "option1") {
-					donatePlaceholder.attr("placeholder", "$25.00");
-				}
-				if (this.value === "option2") {
-					donatePlaceholder.attr("placeholder", "$50.00");
-				}
-				if (this.value === "option3") {
-					donatePlaceholder.attr("placeholder", "$100.00");
-				}
-			});
-		}
-	
-	};
-	
-	function init() {
-		new DonateSection();
-	}
-	
-	document.addEventListener("DOMContentLoaded", function () {
-		init();
-	}, false);
-
-/***/ },
-/* 196 */
-/*!*****************************!*\
-  !*** ./data/donations.json ***!
-  \*****************************/
-/***/ function(module, exports) {
-
-	module.exports = {
-		"donations": [
-			{
-				"id": 1,
-				"desktopImg": "desktop-selection-1.jpg",
-				"mobileImg:": "mobile-selection-1.jpg"
-			},
-			{
-				"id": 2,
-				"desktopImg": "desktop-selection-2.jpg",
-				"mobileImg:": "mobile-selection-2.jpg"
-			},
-			{
-				"id": 3,
-				"desktopImg": "desktop-selection-3.jpg",
-				"mobileImg:": "mobile-selection-3.jpg"
-			}
-		]
 	};
 
 /***/ }

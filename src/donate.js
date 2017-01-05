@@ -1,6 +1,6 @@
 function DonateSection() {
-	this.activateHeader();
-	this.activateBtn();
+	// this.activateHeader();
+	// this.activateBtn();
 	this.updateDonateInfo();
 }
 
@@ -8,21 +8,21 @@ DonateSection.prototype = {
 
 	constructor: DonateSection,
 
-	activateHeader: function() {
-		const headers = ".section-4 .selection-container";
-		$("body").on("click", headers, function() {
-			$(this).addClass("selection-active");
-			$(this).siblings().removeClass("selection-active");
-		});
-	},
+	// activateHeader: function() {
+	// 	const headers = ".section-4 .selection-container";
+	// 	$("body").on("click", headers, function() {
+	// 		$(this).addClass("selection-active");
+	// 		$(this).siblings().removeClass("selection-active");
+	// 	});
+	// },
 
-	activateBtn: function() {
-		const donateBtns = ".section-4 .donation-buttons label";
-		$("body").on("click", donateBtns, function() {
-			$(this).addClass("active");
-			$(this).parent().siblings().children("label").removeClass("active");
-		});
-	},
+	// activateBtn: function() {
+	// 	const donateBtns = ".section-4 .donation-buttons label";
+	// 	$("body").on("click", donateBtns, function() {
+	// 		$(this).addClass("active");
+	// 		$(this).parent().siblings().children("label").removeClass("active");
+	// 	});
+	// },
 
 	updateDonateInfo: function() {
 
