@@ -65,7 +65,7 @@
 	
 	var React = __webpack_require__(/*! react */ 3);
 	var ReactDOM = __webpack_require__(/*! react-dom */ 46);
-	var main = __webpack_require__(/*! ./main */ 192);
+	var carouselAnimation = __webpack_require__(/*! ./carouselAnimation */ 196);
 	var tiles = __webpack_require__(/*! ./tiles */ 193);
 	var donate = __webpack_require__(/*! ./donate */ 194);
 	
@@ -189,6 +189,11 @@
 													{ className: 'btn-text-container' },
 													slide.btnText
 												)
+											),
+											React.createElement(
+												'div',
+												{ className: 'down-arrow-container' },
+												React.createElement('img', { className: 'down-arrow arrow-1', src: '/images/down-arrow.png', alt: '' })
 											)
 										)
 									)
@@ -256,6 +261,11 @@
 													)
 												)
 											)
+										),
+										React.createElement(
+											'div',
+											{ className: 'down-arrow-container' },
+											React.createElement('img', { className: 'down-arrow arrow-2', src: '/images/down-arrow.png', alt: '' })
 										)
 									)
 								)
@@ -5941,26 +5951,11 @@
 	
 			_this.handleFormSubmit = function (formSubmitEvent) {
 				formSubmitEvent.preventDefault();
-				// console.log('You have selected this amount', this.state.selectedDonationOption);
-				// console.log('You have selected this time:', this.state.selectedTimeOption);	
 			};
 	
 			_this.state = {};
-			// this.state = {selectedTimeOption: 'option1', selectedDonationOption: 'option1'};
 			return _this;
 		}
-	
-		// handleTimeOptionChange = (changeEvent) => {
-		// 	this.setState({
-		// 		selectedTimeOption: changeEvent.target.value
-		// 	})
-		// }
-	
-		// handleDonationOptionChange = (changeEvent) => {
-		// 	this.setState({
-		// 		selectedDonationOption: changeEvent.target.value
-		// 	})
-		// }
 	
 		_createClass(Form, [{
 			key: 'render',
@@ -24101,162 +24096,14 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./../../process/browser.js */ 5)))
 
 /***/ },
-/* 192 */
-/*!*********************!*\
-  !*** ./src/main.js ***!
-  \*********************/
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	var easeScroll = __webpack_require__(/*! ./jquery.easeScroll.js */ 195);
-	$('.carousel').carousel({});
-	
-	function Parallax() {
-		this.mainImageScroll();
-		this.mainImageResize();
-		this.mainImageOnPageLoad();
-		this.easeScrolling();
-		this.fadeAnimation();
-	}
-	
-	Parallax.prototype = {
-		constructor: Parallax,
-	
-		scrollConditions: function scrollConditions() {
-			var mainImage = $(".main-image");
-			var lowerContainer = $(".lower-slide-container");
-			var lowerContainerHeight = lowerContainer.height();
-			var topChange = 100 / lowerContainerHeight;
-			var leftChange = -(29 / lowerContainerHeight);
-			var checkWinWidth = window.innerWidth;
-			var scrolled = $(window).scrollTop();
-	
-			if (scrolled <= lowerContainerHeight) {
-				mainImage.css("top", scrolled * topChange + "%");
-	
-				if (checkWinWidth < 768) {
-					mainImage.css("top", 25 + scrolled * topChange + "%");
-				}
-	
-				if (checkWinWidth > 1080) {
-					mainImage.css("left", 50 + scrolled * leftChange + "%");
-					mainImage.css("opacity", 1);
-				} else {
-					mainImage.css("left", 50 + "%");
-					if (parseInt(mainImage[0].style.top) > 50 && checkWinWidth < 1081) {
-						mainImage.css("opacity", .4);
-					} else {
-						mainImage.css("opacity", 1);
-					}
-				};
-			}
-			if (scrolled > lowerContainerHeight) {
-				mainImage.css("top", 98.13 + "%");
-				mainImage.css("left", 21.6767 + "%");
-				if (checkWinWidth < 768) {
-					mainImage.css("top", 125 + "%");
-				}
-				if (checkWinWidth < 1081) {
-					mainImage.css("left", 50 + "%");
-					mainImage.css("opacity", .4);
-				}
-				if (checkWinWidth > 1080) {
-					mainImage.css("opacity", 1);
-				}
-			}
-		},
-	
-		mainImageScroll: function mainImageScroll() {
-			var scrollConditions = this.scrollConditions;
-			$(window).scroll(function (e) {
-				scrollConditions();
-			});
-		},
-	
-		mainImageOnPageLoad: function mainImageOnPageLoad() {
-			var scrollConditions = this.scrollConditions;
-			$(window).load(function () {
-				scrollConditions();
-			});
-		},
-	
-		mainImageResize: function mainImageResize() {
-			var scrollConditions = this.scrollConditions;
-			$(window).resize(function () {
-				scrollConditions();
-			});
-		},
-	
-		easeScrolling: function easeScrolling() {
-			var html = $("html");
-			html.easeScroll();
-	
-			html.easeScroll({
-				frameRate: 60,
-				animationTime: 1500,
-				stepSize: 120,
-				pulseAlgorithm: 1,
-				pulseScale: 8,
-				pulseNormalize: 1,
-				accelerationDelta: 20,
-				accelerationMax: 1,
-				keyboardSupport: true,
-				arrowScroll: 50,
-				touchpadSupport: true,
-				fixedBackground: true
-			});
-		},
-	
-		fadeConditions: function fadeConditions(lowerSlideRight, lowerContainerOffset, index) {
-			var scrolled = $(window).scrollTop();
-			if (scrolled > lowerContainerOffset / 1.5) {
-				if ($(lowerSlideRight[index]).css("opacity") == 0) {
-					$(lowerSlideRight[index]).fadeTo(500, 1);
-				}
-			}
-			if (scrolled < lowerContainerOffset / 1.5) {
-				if ($(lowerSlideRight[index]).css("opacity") == 1) {
-					$(lowerSlideRight[index]).fadeTo(500, 0);
-				}
-			}
-		},
-	
-		fadeAnimation: function fadeAnimation() {
-			var lowerSlideRight = $(".lower-slide-right");
-			var lowerContainerOffset = $(".lower-slide-container").offset().top;
-			var fadeConditions = this.fadeConditions;
-			lowerSlideRight.each(function (index) {
-				$(window).scroll(function (e) {
-					fadeConditions(lowerSlideRight, lowerContainerOffset, index);
-				});
-				$(window).resize(function (e) {
-					fadeConditions(lowerSlideRight, lowerContainerOffset, index);
-				});
-				$(window).load(function (e) {
-					fadeConditions(lowerSlideRight, lowerContainerOffset, index);
-				});
-			});
-		}
-	
-	};
-	
-	function init() {
-		new Parallax();
-	}
-	
-	document.addEventListener("DOMContentLoaded", function () {
-		init();
-	}, false);
-
-/***/ },
+/* 192 */,
 /* 193 */
 /*!**********************!*\
   !*** ./src/tiles.js ***!
   \**********************/
 /***/ function(module, exports) {
 
-	'use strict';
+	"use strict";
 	
 	function Tiles() {
 		this.tiles = $(".section-3 .tile-container");
@@ -24267,24 +24114,28 @@
 	
 		constructor: Tiles,
 	
-		onHover: function onHover() {
-			$('body').bind('touchstart', function () {});
-			var tiles = this.tiles;
+		replaceText: function replaceText(text) {
 			var textContainer = $(".section-3 .tile-change");
+			textContainer.text(text);
+		},
+	
+		onHover: function onHover() {
+			var tiles = this.tiles;
+			var replaceText = this.replaceText;
 	
 			tiles.hover(function () {
 	
 				if ($(this).attr("id") == "tile-1") {
-					textContainer.text("pineapples");
+					replaceText("pineapples");
 				}
 				if ($(this).attr("id") == "tile-2") {
-					textContainer.text("coffee beans");
+					replaceText("coffee beans");
 				}
 				if ($(this).attr("id") == "tile-3") {
-					textContainer.text("pandas");
+					replaceText("pandas");
 				}
 				if ($(this).attr("id") == "tile-4") {
-					textContainer.text("dolphins");
+					replaceText("dolphins");
 				}
 			});
 		}
@@ -24628,6 +24479,209 @@
 	        L && K && (u("mousedown", a), u("mousewheel", n), u("load", t));
 	    }();
 	};
+
+/***/ },
+/* 196 */
+/*!**********************************!*\
+  !*** ./src/carouselAnimation.js ***!
+  \**********************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	
+	var easeScroll = __webpack_require__(/*! ./jquery.easeScroll.js */ 195);
+	
+	function Parallax() {
+		this.mainImageScroll();
+		this.mainImageResize();
+		this.mainImageOnPageLoad();
+		this.easeScrolling();
+	}
+	
+	Parallax.prototype = {
+		constructor: Parallax,
+	
+		scrollConditions: function scrollConditions() {
+			var mainImage = $(".main-image");
+			var lowerContainer = $(".lower-slide-container");
+			var lowerContainerHeight = lowerContainer.height();
+			var topChange = 100 / lowerContainerHeight;
+			var leftChange = -(29 / lowerContainerHeight);
+			var checkWinWidth = window.innerWidth;
+			var scrolled = $(window).scrollTop();
+	
+			if (scrolled <= lowerContainerHeight) {
+				mainImage.css("top", scrolled * topChange + "%");
+	
+				if (checkWinWidth < 768) {
+					mainImage.css("top", 25 + scrolled * topChange + "%");
+				}
+	
+				if (checkWinWidth > 1080) {
+					mainImage.css("left", 50 + scrolled * leftChange + "%");
+					mainImage.css("opacity", 1);
+				} else {
+					mainImage.css("left", 50 + "%");
+					if (parseInt(mainImage[0].style.top) > 50 && checkWinWidth < 1081) {
+						mainImage.css("opacity", .4);
+					} else {
+						mainImage.css("opacity", 1);
+					}
+				};
+			}
+			if (scrolled > lowerContainerHeight) {
+				mainImage.css("top", 98.13 + "%");
+				mainImage.css("left", 21.6767 + "%");
+				if (checkWinWidth < 768) {
+					mainImage.css("top", 125 + "%");
+				}
+				if (checkWinWidth < 1081) {
+					mainImage.css("left", 50 + "%");
+					mainImage.css("opacity", .4);
+				}
+				if (checkWinWidth > 1080) {
+					mainImage.css("opacity", 1);
+				}
+			}
+		},
+	
+		mainImageScroll: function mainImageScroll() {
+			var scrollConditions = this.scrollConditions;
+			$(window).scroll(function (e) {
+				scrollConditions();
+			});
+		},
+	
+		mainImageOnPageLoad: function mainImageOnPageLoad() {
+			var scrollConditions = this.scrollConditions;
+			$(window).load(function () {
+				scrollConditions();
+			});
+		},
+	
+		mainImageResize: function mainImageResize() {
+			var scrollConditions = this.scrollConditions;
+			$(window).resize(function () {
+				scrollConditions();
+			});
+		},
+	
+		easeScrolling: function easeScrolling() {
+			var html = $("html");
+			html.easeScroll();
+	
+			html.easeScroll({
+				frameRate: 60,
+				animationTime: 1500,
+				stepSize: 120,
+				pulseAlgorithm: 1,
+				pulseScale: 8,
+				pulseNormalize: 1,
+				accelerationDelta: 20,
+				accelerationMax: 1,
+				keyboardSupport: true,
+				arrowScroll: 50,
+				touchpadSupport: true,
+				fixedBackground: true
+			});
+		}
+	
+	};
+	
+	function FadeAnimation() {
+		this.toAnimate();
+	}
+	
+	FadeAnimation.prototype = {
+	
+		constructor: FadeAnimation,
+		fadeConditions: function fadeConditions(lowerSlideRight, lowerContainerOffset, index) {
+			var scrolled = $(window).scrollTop();
+			if (scrolled > lowerContainerOffset / 1.5) {
+				if ($(lowerSlideRight[index]).css("opacity") == 0) {
+					$(lowerSlideRight[index]).fadeTo(500, 1);
+				}
+			}
+			if (scrolled < lowerContainerOffset / 1.5) {
+				if ($(lowerSlideRight[index]).css("opacity") == 1) {
+					$(lowerSlideRight[index]).fadeTo(500, 0);
+				}
+			}
+		},
+	
+		toAnimate: function toAnimate() {
+			var lowerSlideRight = $(".lower-slide-right");
+			var lowerContainerOffset = $(".lower-slide-container").offset().top;
+			var fadeConditions = this.fadeConditions;
+			lowerSlideRight.each(function (index) {
+				$(window).scroll(function (e) {
+					fadeConditions(lowerSlideRight, lowerContainerOffset, index);
+				});
+				$(window).resize(function (e) {
+					fadeConditions(lowerSlideRight, lowerContainerOffset, index);
+				});
+				$(window).load(function (e) {
+					fadeConditions(lowerSlideRight, lowerContainerOffset, index);
+				});
+			});
+		}
+	
+	};
+	
+	function DownArrow() {
+		this.arrowScroll();
+	}
+	
+	DownArrow.prototype = {
+	
+		constructor: DownArrow,
+	
+		arrowAnimate: function arrowAnimate(section) {
+			var toAnimate = $("html, body");
+			toAnimate.animate({
+				scrollTop: section.offset().top
+			}, 'slow');
+		},
+	
+		arrowScroll: function arrowScroll() {
+			var downArrows = $(".down-arrow-container .down-arrow");
+			var downArrowsString = ".down-arrow-container .down-arrow";
+			var arrowAnimate = this.arrowAnimate;
+			$("body").on("click", downArrowsString, function () {
+				var section1 = $(".carousel .active .lower-slide-container");
+				var section2 = $(".section-2");
+				var section3 = $(".section-3");
+				var section4 = $(".section-4");
+	
+				if ($(this).hasClass("arrow-1")) {
+					arrowAnimate(section1);
+				}
+	
+				if ($(this).hasClass("arrow-2")) {
+					arrowAnimate(section2);
+				}
+	
+				if ($(this).hasClass("arrow-3")) {
+					arrowAnimate(section3);
+				}
+	
+				if ($(this).hasClass("arrow-4")) {
+					arrowAnimate(section4);
+				}
+			});
+		}
+	
+	};
+	
+	function init() {
+		new Parallax();
+		new FadeAnimation();
+		new DownArrow();
+	}
+	
+	document.addEventListener("DOMContentLoaded", function () {
+		init();
+	}, false);
 
 /***/ }
 /******/ ]);

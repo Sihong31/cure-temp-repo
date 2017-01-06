@@ -1,14 +1,10 @@
 const easeScroll = require('./jquery.easeScroll.js');
-$('.carousel').carousel({
-	
-});
 
 function Parallax() {
 	this.mainImageScroll();
 	this.mainImageResize();
 	this.mainImageOnPageLoad();
 	this.easeScrolling();
-	this.fadeAnimation();
 }
 
 Parallax.prototype = {
@@ -101,6 +97,16 @@ Parallax.prototype = {
 		});
 	},
 
+
+}
+
+function FadeAnimation() {
+	this.toAnimate();
+}
+
+FadeAnimation.prototype = {
+
+	constructor: FadeAnimation,
 	fadeConditions: function(lowerSlideRight, lowerContainerOffset, index) {
 		const scrolled = $(window).scrollTop();
 		if (scrolled > lowerContainerOffset/1.5) {
@@ -115,7 +121,7 @@ Parallax.prototype = {
 		}
 	},
 
-	fadeAnimation: function() {
+	toAnimate: function() {
 		const lowerSlideRight = $(".lower-slide-right");
 		const lowerContainerOffset = $(".lower-slide-container").offset().top;
 		const fadeConditions = this.fadeConditions;
@@ -134,8 +140,55 @@ Parallax.prototype = {
 
 }
 
+function DownArrow() {
+	this.arrowScroll();
+}
+
+DownArrow.prototype = {
+
+	constructor: DownArrow,
+
+	arrowAnimate: function(section) {
+		const toAnimate = $("html, body");
+		toAnimate.animate({
+			scrollTop: section.offset().top
+		}, 'slow');
+	},
+
+	arrowScroll: function() {
+		const downArrows = $(".down-arrow-container .down-arrow");
+		const downArrowsString = ".down-arrow-container .down-arrow";
+		const arrowAnimate = this.arrowAnimate;
+		$("body").on("click", downArrowsString, function(){
+			const section1 = $(".carousel .active .lower-slide-container");
+			const section2 = $(".section-2");
+			const section3 = $(".section-3");
+			const section4 = $(".section-4");
+
+			if ($(this).hasClass("arrow-1")) {
+				arrowAnimate(section1)
+			}
+
+			if ($(this).hasClass("arrow-2")) {
+				arrowAnimate(section2)	
+			}	
+
+			if ($(this).hasClass("arrow-3")) {
+				arrowAnimate(section3)
+			}	
+
+			if ($(this).hasClass("arrow-4")) {
+				arrowAnimate(section4)
+			}	
+		});
+	}
+
+}
+
 function init() {
 	new Parallax();
+	new FadeAnimation();
+	new DownArrow();
 }
 
 document.addEventListener("DOMContentLoaded", function() {

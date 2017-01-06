@@ -1,6 +1,6 @@
 const React = require('react');
 const ReactDOM = require('react-dom');
-const main = require('./main');
+const carouselAnimation = require('./carouselAnimation');
 const tiles = require('./tiles');
 const donate = require('./donate');
 

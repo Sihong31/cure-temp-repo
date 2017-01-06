@@ -50,9 +50,6 @@ class Carousel extends React.Component {
 	      	  		  {this.state.slides.map(slide =>
 					    <div className={`item cure-carousel-item ${this.activeFirstItem(slide.id)}`} key={slide.id}>
 					      <div className="row">
-					      	{/*<div className="hidden-xs col-sm-1 side-container">
-					      		<img className="img-responsive carousel-shoulder left" src="images/carousel/s1-shoulder-left.png" alt=""/>
-					      	</div>*/}
 					      	<div className="col-xs-12">
 					      	  <div className="upper-slide-container">
 					      	  	<h4 className="header-left" dangerouslySetInnerHTML={{__html: slide.headerLeft}}></h4>
@@ -63,7 +60,10 @@ class Carousel extends React.Component {
 						    		<div className="btn-text-container">
 						    			{slide.btnText}
 						    		</div>
-						    	</a>	
+						    	</a>
+						    	<div className="down-arrow-container">
+						    		<img className="down-arrow arrow-1" src="/images/down-arrow.png" alt=""/>
+						    	</div>	
 						      </div>
 					      	</div>
 					      	{/*<div className="hidden-xs col-sm-1 side-container">
@@ -94,7 +94,10 @@ class Carousel extends React.Component {
 								    		</div>
 								    	</a>
 								    </div>
-								   </div>
+								</div>
+								<div className="down-arrow-container">
+						    		<img className="down-arrow arrow-2" src="/images/down-arrow.png" alt=""/>
+						    	</div>
 					    	</div>
 						  </div>
 					    </div>

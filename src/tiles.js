@@ -7,24 +7,28 @@ Tiles.prototype = {
 
 	constructor: Tiles,
 
-	onHover: function() {
-		$('body').bind('touchstart', function() {});
-		const tiles = this.tiles;
+	replaceText: function(text) {
 		const textContainer = $(".section-3 .tile-change");
+		textContainer.text(text);
+	},
+
+	onHover: function() {
+		const tiles = this.tiles;
+		const replaceText = this.replaceText;
 		
 				tiles.hover(function(){
 
 				if ($(this).attr("id") == "tile-1") {
-					textContainer.text("pineapples")
+					replaceText("pineapples");
 				}				
 				if ($(this).attr("id") == "tile-2") {
-					textContainer.text("coffee beans")
+					replaceText("coffee beans");
 				}				
 				if ($(this).attr("id") == "tile-3") {
-					textContainer.text("pandas")
+					replaceText("pandas");
 				}				
 				if ($(this).attr("id") == "tile-4") {
-					textContainer.text("dolphins")
+					replaceText("dolphins");
 				}
 		})
 	}
