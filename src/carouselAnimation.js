@@ -148,37 +148,51 @@ DownArrow.prototype = {
 
 	constructor: DownArrow,
 
-	arrowAnimate: function(section) {
-		const toAnimate = $("html, body");
-		toAnimate.animate({
+	pageOn: function(page) {
+      page.on("scroll mousedown wheel DOMMouseScroll mousewheel keyup touchmove", function() {
+        page.stop(); //stop scroll animation if user does something manual
+      });
+    },
+
+    pageOff: function(page) {
+      page.off("scroll mousedown wheel DOMMouseScroll mousewheel keyup touchmove");
+    },
+
+	arrowAnimate: function(section, page, fn) {
+		page.animate({
 			scrollTop: section.offset().top
-		}, 'slow');
+		}, 'slow', function() {
+			fn(page);
+		});
 	},
 
 	arrowScroll: function() {
 		const downArrows = $(".down-arrow-container .down-arrow");
 		const downArrowsString = ".down-arrow-container .down-arrow";
+		const page = $("html, body");
 		const arrowAnimate = this.arrowAnimate;
+		const pageOn = this.pageOn;
+		const pageOff = this.pageOff;
 		$("body").on("click", downArrowsString, function(){
 			const section1 = $(".carousel .active .lower-slide-container");
 			const section2 = $(".section-2");
 			const section3 = $(".section-3");
 			const section4 = $(".section-4");
-
+			pageOn(page);
 			if ($(this).hasClass("arrow-1")) {
-				arrowAnimate(section1)
+				arrowAnimate(section1, page, pageOff)
 			}
 
 			if ($(this).hasClass("arrow-2")) {
-				arrowAnimate(section2)	
+				arrowAnimate(section2, page, pageOff)	
 			}	
 
 			if ($(this).hasClass("arrow-3")) {
-				arrowAnimate(section3)
+				arrowAnimate(section3, page, pageOff)
 			}	
 
 			if ($(this).hasClass("arrow-4")) {
-				arrowAnimate(section4)
+				arrowAnimate(section4, page, pageOff)
 			}	
 		});
 	}

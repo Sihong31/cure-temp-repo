@@ -24636,37 +24636,51 @@
 	
 		constructor: DownArrow,
 	
-		arrowAnimate: function arrowAnimate(section) {
-			var toAnimate = $("html, body");
-			toAnimate.animate({
+		pageOn: function pageOn(page) {
+			page.on("scroll mousedown wheel DOMMouseScroll mousewheel keyup touchmove", function () {
+				page.stop(); //stop scroll animation if user does something manual
+			});
+		},
+	
+		pageOff: function pageOff(page) {
+			page.off("scroll mousedown wheel DOMMouseScroll mousewheel keyup touchmove");
+		},
+	
+		arrowAnimate: function arrowAnimate(section, page, fn) {
+			page.animate({
 				scrollTop: section.offset().top
-			}, 'slow');
+			}, 'slow', function () {
+				fn(page);
+			});
 		},
 	
 		arrowScroll: function arrowScroll() {
 			var downArrows = $(".down-arrow-container .down-arrow");
 			var downArrowsString = ".down-arrow-container .down-arrow";
+			var page = $("html, body");
 			var arrowAnimate = this.arrowAnimate;
+			var pageOn = this.pageOn;
+			var pageOff = this.pageOff;
 			$("body").on("click", downArrowsString, function () {
 				var section1 = $(".carousel .active .lower-slide-container");
 				var section2 = $(".section-2");
 				var section3 = $(".section-3");
 				var section4 = $(".section-4");
-	
+				pageOn(page);
 				if ($(this).hasClass("arrow-1")) {
-					arrowAnimate(section1);
+					arrowAnimate(section1, page, pageOff);
 				}
 	
 				if ($(this).hasClass("arrow-2")) {
-					arrowAnimate(section2);
+					arrowAnimate(section2, page, pageOff);
 				}
 	
 				if ($(this).hasClass("arrow-3")) {
-					arrowAnimate(section3);
+					arrowAnimate(section3, page, pageOff);
 				}
 	
 				if ($(this).hasClass("arrow-4")) {
-					arrowAnimate(section4);
+					arrowAnimate(section4, page, pageOff);
 				}
 			});
 		}
