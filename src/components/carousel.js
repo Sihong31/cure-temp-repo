@@ -49,6 +49,7 @@ class Carousel extends React.Component {
 				  <div className="carousel-inner" role="listbox">   	  		
 	      	  		  {this.state.slides.map(slide =>
 					    <div className={`item cure-carousel-item ${this.activeFirstItem(slide.id)}`} key={slide.id}>
+					    {/*<section className="section-1a"> */}
 					      <div className="row">
 					      	<div className="col-xs-12">
 					      	  <div className="upper-slide-container">
@@ -66,16 +67,14 @@ class Carousel extends React.Component {
 						    	</div>	
 						      </div>
 					      	</div>
-					      	{/*<div className="hidden-xs col-sm-1 side-container">
-					      		<img className="img-responsive carousel-shoulder right" src="images/carousel/s1-shoulder-right.png" alt=""/>
-					      	</div>*/}
 						  </div>
+						{/*</section> */}
 
+						{/*<section className="section-1b"> */}
 					      <div className="row">
 					      	<div className="lower-slide-container">
 						      	<div className="col-xs-12 col-sm-6 lower-slide-left">
-							    	{/*<img className="img-responsive hidden-xs" src={`/images/carousel/${slide.lowerImgD}`} alt={slide.id}/>
-							    	<img className="img-responsive hidden-sm hidden-md hidden-lg" src={`/images/carousel/${slide.lowerImgM}`} alt={slide.id}/>*/}
+						      		<img className="" src={`/images/carousel/${slide.lowerImgD}`} alt=""/>
 						      	</div>
 						      	<div className="right-content-container">
 							    	<div className="col-xs-12 col-sm-6 lower-slide-right">
@@ -100,6 +99,7 @@ class Carousel extends React.Component {
 						    	</div>
 					    	</div>
 						  </div>
+						{/*</section> */}
 					    </div>
   	      	  	      )}
 					  <Button link="#" bodyText="donate" extraClass="donate-btn" id="donate-btn-first-section" />

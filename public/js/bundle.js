@@ -47,7 +47,7 @@
   \**********************/
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
+	"use strict";
 	
 	var _carousel = __webpack_require__(/*! ./components/carousel */ 1);
 	
@@ -68,8 +68,12 @@
 	var carouselAnimation = __webpack_require__(/*! ./carouselAnimation */ 196);
 	var tiles = __webpack_require__(/*! ./tiles */ 193);
 	var donate = __webpack_require__(/*! ./donate */ 194);
+	var slick = __webpack_require__(/*! ./slickSlide */ 197);
 	
-	ReactDOM.render(React.createElement(_carousel2.default, null), document.getElementById('react-carousel-container'));
+	// ReactDOM.render(
+	// 	<Carousel />,
+	// 	document.getElementById('react-carousel-container')
+	// );
 	
 	ReactDOM.render(React.createElement(_tiles2.default, null), document.getElementById('react-tile'));
 	
@@ -204,7 +208,11 @@
 									React.createElement(
 										'div',
 										{ className: 'lower-slide-container' },
-										React.createElement('div', { className: 'col-xs-12 col-sm-6 lower-slide-left' }),
+										React.createElement(
+											'div',
+											{ className: 'col-xs-12 col-sm-6 lower-slide-left' },
+											React.createElement('img', { className: '', src: '/images/carousel/' + slide.lowerImgD, alt: '' })
+										),
 										React.createElement(
 											'div',
 											{ className: 'right-content-container' },
@@ -4491,7 +4499,7 @@
   \*******************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	var require;var __WEBPACK_AMD_DEFINE_RESULT__;/* WEBPACK VAR INJECTION */(function(process, global, module) {'use strict';
+	var __WEBPACK_AMD_DEFINE_RESULT__;var require;/* WEBPACK VAR INJECTION */(function(process, global, module) {'use strict';
 	
 	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 	
@@ -24487,9 +24495,33 @@
   \**********************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
 	
 	var easeScroll = __webpack_require__(/*! ./jquery.easeScroll.js */ 195);
+	
+	$(function () {
+		// wait for document ready
+		// init
+		var controller = new ScrollMagic.Controller({
+			globalSceneOptions: {
+				triggerHook: 'onLeave'
+			}
+		});
+	
+		// get all slides
+		var slides = $("section");
+	
+		// create scene for every slide
+		for (var i = 0; i < slides.length; i++) {
+			new ScrollMagic.Scene({
+				triggerElement: slides[i]
+				// duration: 300
+				// triggerHook: 0,
+				// reverse: true
+			}).setPin(slides[i]).addIndicators() // add indicators (requires plugin)
+			.addTo(controller);
+		}
+	});
 	
 	function Parallax() {
 		this.mainImageScroll();
@@ -24688,14 +24720,39 @@
 	};
 	
 	function init() {
-		new Parallax();
-		new FadeAnimation();
-		new DownArrow();
+		// new Parallax();
+		// new FadeAnimation();
+		// new DownArrow();
 	}
 	
 	document.addEventListener("DOMContentLoaded", function () {
 		init();
 	}, false);
+
+/***/ },
+/* 197 */
+/*!***************************!*\
+  !*** ./src/slickSlide.js ***!
+  \***************************/
+/***/ function(module, exports) {
+
+	// $(document).ready(function(){
+	//   const mainSlide = $('.test');
+	//   mainSlide.slick({
+	//     slidesToShow: 1,
+	//     slidesToScroll: 1,
+	//     arrows: false,
+	//     fade: true,
+	//     draggable: false,
+	//     // infinite: true,
+	//     cssEase: 'ease-out',
+	//     speed: 500,
+	//     swipeToSlide: true,
+	//     vertical: true,
+	//     verticalSwiping: true
+	//   });
+	// });
+	"use strict";
 
 /***/ }
 /******/ ]);

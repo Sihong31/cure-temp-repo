@@ -6,6 +6,7 @@
 		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 		<meta charset="UTF-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css"/>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 		<link rel='stylesheet' href='/stylesheets/style.css' />
 		<link href='https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Slab' rel='stylesheet' type='text/css'>
@@ -17,92 +18,253 @@
 			<div class="cure-logo">cure</div>
 			<div class="brand-text">citizens united for <br/>research in epilepsy</div>
 
-			<section class="section-1" id="section-1">
-			    <div id="react-carousel-container"> <!--react component-->
+			<div id="scrollmagic">
+			<!-- 	<section class="section-1" id="section-1"> -->
+			<section class="section-1a">
+	        <div id="carousel" class="carousel slide" data-ride="carousel" data-interval="false">
+
+				  <ol class="carousel-indicators">
+				    <li data-target="#carousel" data-slide-to="0" class="active"></li>
+				    <li data-target="#carousel" data-slide-to="1"></li>
+				    <li data-target="#carousel" data-slide-to="2"></li>
+				  </ol>
+
+				    <div class="carousel-inner" role="listbox">   	
+
+					    <div class="item cure-carousel-item active">
+						      <div class="row">
+						      	<div class="col-xs-12">
+						      	  <div class="upper-slide-container">
+						      	  	<h4 class="header-left"><span>one in 26 people will develop epilepsy in their lifetime.</h4>
+							    	<img class="img-responsive main-image" src="/images/carousel/slide-1.png"/>
+							    	<h4 class="header-right">that's <span>65 million</span> people who desperately <span>need a cure</span></h4>
+							    	<h1>lauren needs a cure
+							    	<p class='hidden-xs'>Her first seizure was at seven months. Now 35, Lauren hasn't lived a single day independently.</p>
+							    	</h1>
+							    	<a href="#" class="btn cure-btn upper-carousel-btn" role="button">
+							    		<div class="btn-text-container">
+							    			view lauren's story
+							    		</div>
+							    	</a>
+							    	<div class="down-arrow-container">
+							    		<img class="down-arrow arrow-1" src="/images/down-arrow.png" alt=""/>
+							    	</div>	
+							      </div>
+						      	</div>
+							  </div>
+					    </div>					    
+
+					    <div class="item cure-carousel-item">
+						      <div class="row">
+						      	<div class="col-xs-12">
+						      	  <div class="upper-slide-container">
+						      	  	<h4 class="header-left"><span>one in 26 people will develop epilepsy in their lifetime.</h4>
+							    	<img class="img-responsive main-image" src="/images/carousel/slide-1.png"/>
+							    	<h4 class="header-right">that's <span>65 million</span> people who desperately <span>need a cure</span></h4>
+							    	<h1>lauren needs a cure
+							    	<p class='hidden-xs'>Her first seizure was at seven months. Now 35, Lauren hasn't lived a single day independently.</p>
+							    	</h1>
+							    	<a href="#" class="btn cure-btn upper-carousel-btn" role="button">
+							    		<div class="btn-text-container">
+							    			view lauren's story
+							    		</div>
+							    	</a>
+							    	<div class="down-arrow-container">
+							    		<img class="down-arrow arrow-1" src="/images/down-arrow.png" alt=""/>
+							    	</div>	
+							      </div>
+						      	</div>
+							  </div>
+					    </div>			
+
+					    <div class="item cure-carousel-item">
+						      <div class="row">
+						      	<div class="col-xs-12">
+						      	  <div class="upper-slide-container">
+						      	  	<h4 class="header-left"><span>one in 26 people will develop epilepsy in their lifetime.</h4>
+							    	<img class="img-responsive main-image" src="/images/carousel/slide-1.png"/>
+							    	<h4 class="header-right">that's <span>65 million</span> people who desperately <span>need a cure</span></h4>
+							    	<h1>lauren needs a cure
+							    	<p class='hidden-xs'>Her first seizure was at seven months. Now 35, Lauren hasn't lived a single day independently.</p>
+							    	</h1>
+							    	<a href="#" class="btn cure-btn upper-carousel-btn" role="button">
+							    		<div class="btn-text-container">
+							    			view lauren's story
+							    		</div>
+							    	</a>
+							    	<div class="down-arrow-container">
+							    		<img class="down-arrow arrow-1" src="/images/down-arrow.png" alt=""/>
+							    	</div>	
+							      </div>
+						      	</div>
+							  </div>
+					    </div>
+  	      	  	      
+					  <Button link="#" bodyText="donate" extraClass="donate-btn" id="donate-btn-first-section" />
+					  <Button link="#" bodyText="donate" extraClass="donate-btn" />
+				  </div>
+
+				  <a class="left carousel-control" href="#carousel"
+				     role="button" data-slide="prev">
+				    <span class="carousel-prev" aria-hidden="true"></span>
+				    <span class="sr-only">Previous</span>
+				  </a>
+				  <a class="right carousel-control" href="#carousel"
+				     role="button" data-slide="next">
+				    <span class="carousel-next" aria-hidden="true"></span>
+				    <span class="sr-only">Next</span>
+				  </a>
 				</div>
-			</section>
+				</section>
 
-			<section class="section-2" id="section-2">
-				<div class="row">
-
-					<div class="col-sm-6 col-sm-push-6 right">
-						<div class="right-content-container">
-							<h1>Research will lead us to a <span>cure</span></h1>
-							<hr></hr>
-							<p>We identify and fund cutting-edge research, challenging scientists worldwide to collaborate and innovate in pursuit of a cure for epilepsy. Since being founded in 1998, CURE has been at the forefront of epilepsy research, raising more than $40 million to fund research and other initiatives. The answers are out there, and we’re determined to find them.</p>
-							<a href="#" class="btn cure-btn research-btn" role="button">
-					    		<div class="btn-text-container">
-					    			why research?
-					    		</div>
-					    	</a>
-					    	<a href="#" class="btn cure-btn research-btn" role="button">
-					    		<div class="btn-text-container">
-					    			our research portfolio
-					    		</div>
-					    	</a>
+				<section class="section-1b">
+			      <div class="row">
+			      	<div class="lower-slide-container">
+				      	<div class="col-xs-12 col-sm-6 lower-slide-left">
+				      		<img class="sub-image" src="/images/carousel/sub-slide-1.png" alt=""/>
+				      	</div>
+				      	<div class="right-content-container">
+					    	<div class="col-xs-12 col-sm-6 lower-slide-right">
+				    			<p class="story-mini-headline"><span class="brand-color-1">Lauren</span><span>Age 8</span>Enjoys lorem IPSUM DOLORE SU ANUM</p>
+				    			<h1 class="story-main-headline">Epilepsy is <span class="brand-color-1">suffering</span></h1>
+				    			<hr></hr>
+				    			<p class="story-body-copy">Like many people suffering from epilepsy, the disorder wreaked havoc on Lauren’s developing brain as a child. As her seizures continued, their origin remained a mystery - a reality that two-thirds of those diagnosed with epilepsy share. After countless hospitalizations, medical procedures, and a lifetime of assisted living, Lauren still doesn’t have an answer. Lauren will never live a normal life, but she is not done fighting. For Lauren and so many others, finding a cure for epilepsy means complete freedom from seizures and the opportunity for a future filled with possibility. </p>
+					    		<a href="#" class="btn cure-btn lower-carousel-btn" role="button">
+						    		<div class="btn-text-container">
+						    			More about epilepsy
+						    		</div>
+						    	</a>
+						    	<a href="#" class="btn cure-btn lower-carousel-btn" role="button">
+						    		<div class="btn-text-container">
+						    			More about lauren
+						    		</div>
+						    	</a>
+						    </div>
 						</div>
+						<div class="down-arrow-container">
+				    		<img class="down-arrow arrow-2" src="/images/down-arrow.png" alt=""/>
+				    	</div>
+			    	</div>
+				  </div>
+				</section>
+
+				<!-- </section> -->
+
+<!-- 				<section>
+							<div class="lower-slide-container">
+						      	<div class="col-xs-12 col-sm-6 lower-slide-left">
+						      		<img class="" src="/images/carousel/sub-slide-1.png" alt=""/>
+						      	</div>
+						      	<div class="right-content-container">
+							    	<div class="col-xs-12 col-sm-6 lower-slide-right">
+						    			<p class="story-mini-headline"><span class="brand-color-1">Lauren</span><span>Age 8</span>Enjoys lorem IPSUM DOLORE SU ANUM</p>
+						    			<h1 class="story-main-headline">Epilepsy is <span class="brand-color-1">suffering</span></h1>
+						    			<hr></hr>
+						    			<p class="story-body-copy">Like many people suffering from epilepsy, the disorder wreaked havoc on Lauren’s developing brain as a child. As her seizures continued, their origin remained a mystery - a reality that two-thirds of those diagnosed with epilepsy share. After countless hospitalizations, medical procedures, and a lifetime of assisted living, Lauren still doesn’t have an answer. Lauren will never live a normal life, but she is not done fighting. For Lauren and so many others, finding a cure for epilepsy means complete freedom from seizures and the opportunity for a future filled with possibility. </p>
+							    		<a href="#" class="btn cure-btn lower-carousel-btn" role="button">
+								    		<div class="btn-text-container">
+								    			More about epilepsy
+								    		</div>
+								    	</a>
+								    	<a href="#" class="btn cure-btn lower-carousel-btn" role="button">
+								    		<div class="btn-text-container">
+								    			More about lauren
+								    		</div>
+								    	</a>
+								    </div>
+								</div>
+								<div class="down-arrow-container">
+						    		<img class="down-arrow arrow-2" src="/images/down-arrow.png" alt=""/>
+						    	</div>
+					    	</div>
+				</section> -->
+
+				<section class="section-2" id="section-2">
+					<div class="row">
+
+						<div class="col-sm-6 col-sm-push-6 right">
+							<div class="right-content-container">
+								<h1>Research will lead us to a <span>cure</span></h1>
+								<hr></hr>
+								<p>We identify and fund cutting-edge research, challenging scientists worldwide to collaborate and innovate in pursuit of a cure for epilepsy. Since being founded in 1998, CURE has been at the forefront of epilepsy research, raising more than $40 million to fund research and other initiatives. The answers are out there, and we’re determined to find them.</p>
+								<a href="#" class="btn cure-btn research-btn" role="button">
+						    		<div class="btn-text-container">
+						    			why research?
+						    		</div>
+						    	</a>
+						    	<a href="#" class="btn cure-btn research-btn" role="button">
+						    		<div class="btn-text-container">
+						    			our research portfolio
+						    		</div>
+						    	</a>
+							</div>
+						</div>
+
+						<div class="col-sm-6 col-sm-pull-6 left">
+							<div class="left-content-container">
+								<img class="img-responsive hidden-xs" src="./images/desktop-research.jpg" alt=""/>
+								<img class="img-responsive hidden-sm hidden-md hidden-lg" src="./images/mobile-research.jpg" alt=""/>
+							</div>
+						</div>	
+
 					</div>
+					<a href="#" class="hidden-xs btn cure-btn donate-btn" role="button">
+			    		<div class="btn-text-container">
+			    			donate
+			    		</div>
+			    	</a>
+					<div class="down-arrow-container">
+			    		<img class="down-arrow arrow-3" id="arrow-3" src="/images/down-arrow.png" alt=""/>
+			    	</div>
+				</section>
 
-					<div class="col-sm-6 col-sm-pull-6 left">
-						<div class="left-content-container">
-							<img class="img-responsive hidden-xs" src="./images/desktop-research.jpg" alt=""/>
-							<img class="img-responsive hidden-sm hidden-md hidden-lg" src="./images/mobile-research.jpg" alt=""/>
+				<section class="section-3" id="section-3">
+					<div class="row">
+
+						<div class="col-sm-6 col-sm-push-6 right">
+							<div class="right-content-container">
+								<h1>We are <span class="tile-change">mothers</span></h1>
+								<hr></hr>
+								<p>We are Citizens United for Research in Epilepsy (CURE) - the leading nongovernmental agency fully committed to funding research in epilepsy. Our organization was founded by Susan Axelrod and mothers of children with epilepsy who joined forces to spearhead the search for a cure.</p>
+								<a href="#" class="btn cure-btn tiles-btn" role="button">
+						    		<div class="btn-text-container">
+						    			More about cure
+						    		</div>
+						    	</a>
+							</div>
 						</div>
-					</div>	
 
-				</div>
-				<a href="#" class="hidden-xs btn cure-btn donate-btn" role="button">
-		    		<div class="btn-text-container">
-		    			donate
-		    		</div>
-		    	</a>
-				<div class="down-arrow-container">
-		    		<img class="down-arrow arrow-3" id="arrow-3" src="/images/down-arrow.png" alt=""/>
-		    	</div>
-			</section>
-
-			<section class="section-3" id="section-3">
-				<div class="row">
-
-					<div class="col-sm-6 col-sm-push-6 right">
-						<div class="right-content-container">
-							<h1>We are <span class="tile-change">mothers</span></h1>
-							<hr></hr>
-							<p>We are Citizens United for Research in Epilepsy (CURE) - the leading nongovernmental agency fully committed to funding research in epilepsy. Our organization was founded by Susan Axelrod and mothers of children with epilepsy who joined forces to spearhead the search for a cure.</p>
-							<a href="#" class="btn cure-btn tiles-btn" role="button">
-					    		<div class="btn-text-container">
-					    			More about cure
-					    		</div>
-					    	</a>
+						<div class="col-sm-6 col-sm-pull-6 left">
+							 <div class="left-content-container">
+							 	<div class="row" id="react-tile"> <!--react component-->
+								 </div>
+							</div>
 						</div>
+
 					</div>
+					<a href="#" class="hidden-xs btn cure-btn donate-btn" role="button">
+			    		<div class="btn-text-container">
+			    			donate
+			    		</div>
+			    	</a>
+					<div class="down-arrow-container">
+			    		<img class="down-arrow arrow-4" id="arrow-4" src="/images/down-arrow.png" alt=""/>
+			    	</div>
+				</section>
 
-					<div class="col-sm-6 col-sm-pull-6 left">
-						 <div class="left-content-container">
-						 	<div class="row" id="react-tile"> <!--react component-->
-							 </div>
-						</div>
+				<section class="section-4" id="section-4">
+					<div class="row" id="react-donations"> <!--react component-->
 					</div>
-
-				</div>
-				<a href="#" class="hidden-xs btn cure-btn donate-btn" role="button">
-		    		<div class="btn-text-container">
-		    			donate
-		    		</div>
-		    	</a>
-				<div class="down-arrow-container">
-		    		<img class="down-arrow arrow-4" id="arrow-4" src="/images/down-arrow.png" alt=""/>
-		    	</div>
-			</section>
-
-			<section class="section-4" id="section-4">
-				<div class="row" id="react-donations"> <!--react component-->
-				</div>
-			</section>
-
+				</section>
+			</div>
 		</div>
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
+	    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.16.0/TweenMax.min.js"></script>
+	    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.3/ScrollMagic.js"></script>
+	    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.3/plugins/animation.gsap.min.js"></script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 		<script src="/js/bundle.js"></script>
 

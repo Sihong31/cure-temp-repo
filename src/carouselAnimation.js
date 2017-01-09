@@ -1,5 +1,31 @@
 const easeScroll = require('./jquery.easeScroll.js');
 
+	$(function () { // wait for document ready
+		// init
+		var controller = new ScrollMagic.Controller({
+			globalSceneOptions: {
+				triggerHook: 'onLeave'
+			}
+		});
+
+		// get all slides
+		var slides = $("section");
+
+		// create scene for every slide
+		for (var i=0; i<slides.length; i++) {
+			new ScrollMagic.Scene({
+					triggerElement: slides[i]
+					// duration: 300
+					// triggerHook: 0,
+					// reverse: true
+				})
+				.setPin(slides[i])
+				.addIndicators() // add indicators (requires plugin)
+				.addTo(controller);
+		}
+
+	});
+
 function Parallax() {
 	this.mainImageScroll();
 	this.mainImageResize();
@@ -200,9 +226,9 @@ DownArrow.prototype = {
 }
 
 function init() {
-	new Parallax();
-	new FadeAnimation();
-	new DownArrow();
+	// new Parallax();
+	// new FadeAnimation();
+	// new DownArrow();
 }
 
 document.addEventListener("DOMContentLoaded", function() {
