@@ -31,6 +31,9 @@
 .carousel {
 	background: #ffffff;
 	.carousel-inner {
+		.cure-carousel-item {
+			/*bottom: -19px;*/
+		}
 		.side-container {
 			height: 100vh;
 			img {
@@ -58,7 +61,8 @@
 
 			.main-image {
 			    position: absolute;
-			    top: 0;
+			    bottom: 0;
+			    /*top: 0;*/
 			    left: 50%;
 			    width: 100%;
 			    min-width: 914px;
@@ -245,19 +249,30 @@
 		padding-right: 0;
 	}
 	.lower-slide-left {
-		max-width: 900px;
+		width: 100%;
+		max-width: 996px;
 		position: absolute;
 	    top: 50%;
 	    transform: translateY(-50%);
     	@media screen and (max-width: 1080px) {
 		    top: 50%;
-		    left: 50%;
+		    left: 0;
 		    width: 100%;
-		    transform: translate(-50%, -50%);
+		    transform: translate(0, -50%);
     	}
 	    .sub-image {
-	    	@media screen and (max-width: 1080px) {
+	    	width: 100%;
+	    	@media screen and (max-width: 1200px) {
 	    		opacity: .4;
+	    	}
+	    	@media screen and (max-width: 1080px) {
+	    		min-height: 100vh;
+	    	}
+	    	@media screen and (max-width: 767px) {
+	    		min-height: inherit;
+	    		margin: 0 auto;
+	    		max-width: 360px;
+	    		opacity: 1;
 	    	}
 	    }
 	}

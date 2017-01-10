@@ -21,20 +21,21 @@
 		}
 	}
 	.left {
-		/*max-width: 900px;*/
-		max-width: 100%;
+		max-width: 874px;
+		/*max-width: 100%;*/
 		@media screen and (max-width: 767px) {
 			position: absolute;
 		    left: 0;
 		    bottom: 0;
+		    width: 100%;
 		}
 	}
 	.right {
 		@media screen and (max-width: 767px) {
 			position: absolute;
-		    top: 50%;
+		    top: 25%;
 		    left: 50%;
-		    transform: translate(-50%, -50%);
+		    transform: translate(-50%, -25%);
 		    padding: 10px;
 		    width: 100%;		
 		}
@@ -50,7 +51,7 @@
 		transform: translateY(-50%);
 		@media screen and (max-width: 767px) {
 			min-height: initial;
-			max-height: 200px;
+			max-height: 150px;
 			position: relative;
 			top: 0;
 			transform: translateY(0);
@@ -75,6 +76,7 @@
 	    	transform: translate(0, 0);
 	    	/*padding: 25px;*/
 	    	text-align: center;
+	    	min-height: 424px;
 	    }
 	    .speak-up-copy {
 	    	@media screen and (max-width: 767px) {
@@ -166,22 +168,22 @@
 		@include responsive-font(2vw, 24px, 80px);
 		margin-bottom: 5px;
 		@media screen and (max-width: 767px) {
-			font-size: 40px;
-			margin-bottom: 20px;
+			font-size: 25px;
+			margin-bottom: 10px;
 		}
 	}
 	.selections {
 		@media screen and (max-width: 767px) {
-			margin-bottom: 15px;
+			margin-bottom: 0;
 			padding: 0px 5px;
 			.selection-container {
 				border-top: 1px solid $brandColorRed;
 				border-bottom: 1px solid $brandColorRed;
 				border-left: 1px solid $brandColorRed;
-	    		padding: 20px 15px;
+	    		padding: 15px 10px;
 				h1.selection {
 					color: $brandColorRed;
-					font-size: 22px;
+					font-size: 18px;
 					padding-left: 0;
 				}
 

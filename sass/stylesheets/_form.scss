@@ -9,8 +9,8 @@
 			}
 			.donate-input {
 				border: 1px solid #777777;
-				font-size: 20px;
-				height: 50px;
+				font-size: 18px;
+				height: 45px;
 				margin: 10px 0 0 0;
 				max-width: 390px;
 	    		padding-left: 15px;
@@ -25,7 +25,7 @@
 			max-width: 540px;
 			width: 100%;
 			@media screen and (max-width: 767px) {
-				margin-bottom: 25px;
+				margin-bottom: 15px;
 				text-align: left;
 			}
 			.donation-options {
@@ -35,8 +35,7 @@
 		.time-options-container {
 			max-width: 540px;
 			@media screen and (max-width: 767px) {
-			    margin-left: auto;
-			    margin-right: auto;
+				margin: 0 auto 10px auto;
 			    width: 100%;
 
 			}
@@ -49,8 +48,7 @@
 		.tribute-container {
 			max-width: 540px;
 			@media screen and (max-width: 767px) {
-			    margin-left: auto;
-			    margin-right: auto;
+				margin: 0 auto 10px auto;
 			    width: 100%;
 			    text-align: left;
 			}

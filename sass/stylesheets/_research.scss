@@ -26,19 +26,20 @@
 			bottom: 0;
 			left: 0;
 			position: absolute;
+			width: 100%;
 		}
 	}
 	.right {
 		@media screen and (max-width: 767px) {
 		    position: absolute;
-	    	top: 50%;
-	    	transform: translateY(-50%);
+	    	top: 25%;
+	    	transform: translateY(-25%);
 	    }
 	}
 	.left-content-container img {
 		min-height: 591px;
-		/*max-width: 914px;*/
-		max-width: 100%;
+		max-width: 874px;
+		/*max-width: 100%;*/
 		width: 100%;
 		position: absolute;
 		/*position: relative;*/
